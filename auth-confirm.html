@@ -2,25 +2,69 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Email Confirmed — Zenelia</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<meta name="description" content="Your Zenelia email has been confirmed.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%231C3A2E'/><circle cx='16' cy='16' r='6' fill='none' stroke='%235BA890' stroke-width='1.5'/><circle cx='16' cy='16' r='3' fill='%235BA890'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Outfit:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Jost',sans-serif;background:#F7F3EE;color:#1C3A2E;min-height:100vh;display:flex;align-items:center;justify-content:center;}
-.card{text-align:center;padding:60px 40px;max-width:440px;}
-.check{width:64px;height:64px;background:#5BA890;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;color:#FDFBF8;font-size:28px;}
-h1{font-family:'Playfair Display',serif;font-size:28px;font-weight:500;margin-bottom:16px;}
-p{font-size:16px;line-height:1.7;color:#5C6E66;margin-bottom:16px;}
-a{color:#5BA890;text-decoration:none;}
+:root{--forest:#1C3A2E;--seafoam:#5BA890;--seafoam-pale:rgba(91,168,144,0.12);--seafoam-soft:#7bbfaa;--gold:#B8966E;--parchment:#F7F3EE;--warm-white:#FDFAF6;--ink:#111e18;--ink-soft:#3d5548;--ink-ghost:#7a9a8e;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--warm-white);color:var(--ink);font-family:'Outfit',sans-serif;font-weight:300;line-height:1.8;min-height:100vh;display:flex;flex-direction:column;}
+
+nav{background:var(--forest);padding:20px 48px;display:flex;justify-content:space-between;align-items:center;}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;color:rgba(253,250,246,0.9);letter-spacing:0.06em;text-decoration:none;}
+.nav-back{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(253,250,246,0.45);text-decoration:none;transition:color .3s;}
+.nav-back:hover{color:rgba(253,250,246,0.8);}
+
+.main{flex:1;display:flex;align-items:center;justify-content:center;padding:60px 24px;}
+.card{text-align:center;max-width:480px;width:100%;background:var(--parchment);border:1px solid rgba(91,168,144,0.15);border-radius:20px;padding:64px 48px;}
+.check-circle{width:72px;height:72px;border-radius:50%;background:var(--seafoam);display:flex;align-items:center;justify-content:center;margin:0 auto 28px;box-shadow:0 4px 16px rgba(91,168,144,0.3);}
+.check-circle svg{width:32px;height:32px;stroke:var(--warm-white);stroke-width:2.5;fill:none;stroke-linecap:round;stroke-linejoin:round;}
+h1{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;color:var(--forest);letter-spacing:-0.01em;margin-bottom:16px;}
+.lead{font-size:16px;color:var(--ink-soft);margin-bottom:16px;line-height:1.7;}
+.subtle{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-ghost);margin-top:32px;padding-top:24px;border-top:1px solid rgba(91,168,144,0.15);}
+.subtle a{color:var(--seafoam);text-decoration:none;}
+.subtle a:hover{color:var(--forest);}
+
+footer{background:var(--forest);padding:32px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--warm-white);}
+.footer-copy{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(253,250,246,0.25);}
+
+@media(max-width:768px){
+  nav,footer{padding:18px 24px;}
+  .card{padding:48px 28px;}
+  h1{font-size:28px;}
+}
 </style>
 </head>
 <body>
-<div class="card">
-  <div class="check">✓</div>
-  <h1>Email confirmed</h1>
-  <p>Your email has been verified. You can now open the Zenelia app and sign in to your account.</p>
-  <p><a href="/index.html">← Back to Zenelia</a></p>
+
+<nav>
+  <a href="index.html" class="nav-logo">Zenelia</a>
+  <a href="index.html" class="nav-back">← Back to Zenelia</a>
+</nav>
+
+<div class="main">
+  <div class="card">
+    <div class="check-circle">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <polyline points="20 6 9 17 4 12"/>
+      </svg>
+    </div>
+    <h1>Email confirmed</h1>
+    <p class="lead">Your email has been verified. You can now open the Zenelia app and sign in to your account.</p>
+    <div class="subtle">
+      <a href="index.html">← Back to Zenelia</a>
+    </div>
+  </div>
 </div>
+
+<footer>
+  <div class="footer-logo">Zenelia</div>
+  <div class="footer-copy">© 2026 Avasy Inc. · Ontario, Canada</div>
+</footer>
+
 </body>
 </html>
