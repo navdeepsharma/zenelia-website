@@ -1,111 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy — Zenelia</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Jost', sans-serif; background: #F7F3EE; color: #1C3A2E; }
-    .header {
-      background: #1C3A2E;
-      padding: 32px 24px;
-      text-align: center;
-    }
-    .header a {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 22px;
-      font-weight: 500;
-      color: #FDFBF8;
-      text-decoration: none;
-      letter-spacing: 0.04em;
-    }
-    .content {
-      max-width: 680px;
-      margin: 0 auto;
-      padding: 48px 24px 80px;
-    }
-    h1 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 36px;
-      font-weight: 500;
-      margin-bottom: 8px;
-    }
-    .date { font-size: 14px; color: #8a9590; margin-bottom: 40px; }
-    h2 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 22px;
-      font-weight: 500;
-      margin-top: 36px;
-      margin-bottom: 12px;
-    }
-    p {
-      font-size: 16px;
-      line-height: 1.75;
-      color: #5C6E66;
-      margin-bottom: 16px;
-    }
-    .footer {
-      text-align: center;
-      padding: 40px 24px;
-      font-size: 14px;
-      color: #8a9590;
-      border-top: 1px solid #e8e4de;
-    }
-    .footer a { color: #5BA890; text-decoration: none; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Privacy Policy — Zenelia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--forest:#1C3A2E;--parchment:#F7F3EE;--seafoam:#5BA890;--gold:#B8966E;--ink:#2C3E36;--inkSoft:#5C6E66;--inkGhost:#8a9590;--warmWhite:#FDFBF8;}
+body{font-family:'Jost',sans-serif;background:var(--parchment);color:var(--forest);}
+a{color:var(--seafoam);text-decoration:none;}
+a:hover{text-decoration:underline;}
+
+.header{background:var(--forest);padding:24px 32px;display:flex;align-items:center;justify-content:space-between;}
+.header .logo{font-family:'Playfair Display',serif;font-size:20px;font-weight:500;color:var(--warmWhite);text-decoration:none;letter-spacing:0.04em;}
+.header .back{font-size:14px;color:rgba(253,251,248,0.6);text-decoration:none;}
+.header .back:hover{color:var(--warmWhite);}
+
+.content{max-width:720px;margin:0 auto;padding:48px 24px 80px;}
+h1{font-family:'Playfair Display',serif;font-size:38px;font-weight:500;margin-bottom:8px;}
+.meta{font-size:14px;color:var(--inkGhost);margin-bottom:16px;}
+.intro{font-size:17px;line-height:1.75;color:var(--inkSoft);margin-bottom:40px;}
+
+.toc{background:#fff;border-radius:14px;padding:24px 28px;margin-bottom:48px;box-shadow:0 2px 12px rgba(28,58,46,0.04);}
+.toc-title{font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--inkGhost);margin-bottom:12px;}
+.toc ol{padding-left:20px;margin:0;}
+.toc li{font-size:15px;line-height:2;color:var(--inkSoft);}
+.toc li a{color:var(--seafoam);text-decoration:none;}
+.toc li a:hover{text-decoration:underline;}
+
+h2{font-family:'Playfair Display',serif;font-size:24px;font-weight:500;margin-top:48px;margin-bottom:14px;color:var(--forest);}
+h3{font-size:16px;font-weight:600;margin-top:20px;margin-bottom:8px;color:var(--forest);}
+p{font-size:16px;line-height:1.75;color:var(--inkSoft);margin-bottom:16px;}
+ul{margin:0 0 16px 20px;}
+li{font-size:15px;line-height:1.75;color:var(--inkSoft);margin-bottom:4px;}
+
+footer{text-align:center;padding:40px 24px;font-size:13px;color:var(--inkGhost);border-top:1px solid #e8e4de;}
+footer .logo{font-family:'Playfair Display',serif;font-size:16px;font-weight:500;color:var(--forest);margin-bottom:8px;}
+footer a{color:var(--seafoam);text-decoration:none;}
+
+@media(max-width:600px){
+  h1{font-size:28px;}
+  h2{font-size:20px;}
+}
+</style>
 </head>
 <body>
 
-  <div class="header">
-    <a href="/">Zenelia</a>
+<div class="header">
+  <a href="/index.html" class="logo">Zenelia</a>
+  <a href="/index.html" class="back">← Back to Zenelia</a>
+</div>
+
+<div class="content">
+  <h1>Privacy Policy</h1>
+  <p class="meta">Last updated: April 2026 · Avasy Inc.</p>
+  <p class="intro">Your privacy matters deeply to us. Zenelia collects only what is necessary to provide the service, never sells your data to third parties, and gives you full control over your information at any time.</p>
+
+  <div class="toc">
+    <div class="toc-title">Contents</div>
+    <ol>
+      <li><a href="#who">Who We Are</a></li>
+      <li><a href="#collect">What We Collect</a></li>
+      <li><a href="#use">How We Use Your Data</a></li>
+      <li><a href="#ai">AI Processing</a></li>
+      <li><a href="#sharing">Data Sharing</a></li>
+      <li><a href="#storage">Data Storage & Security</a></li>
+      <li><a href="#retention">Data Retention</a></li>
+      <li><a href="#rights">Your Rights</a></li>
+      <li><a href="#children">Children's Privacy</a></li>
+      <li><a href="#changes">Changes to This Policy</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ol>
   </div>
 
-  <div class="content">
-    <h1>Privacy Policy</h1>
-    <p class="date">Effective date: April 23, 2026</p>
+  <h2 id="who">1. Who We Are</h2>
+  <p>Zenelia is a product of <strong>Avasy Inc.</strong>, a federally incorporated company in Ontario, Canada (Corporation Number: 924562-6). When you use Zenelia, Avasy Inc. is the data controller responsible for your personal information.</p>
+  <p>We can be reached at: <a href="mailto:hello@zenelia.ai">hello@zenelia.ai</a></p>
 
-    <p>Zenelia ("we," "our," or "the app") is operated by Avasy Inc. This Privacy Policy explains how we collect, use, and protect your information when you use the Zenelia iOS application.</p>
+  <h2 id="collect">2. What We Collect</h2>
 
-    <h2>Information We Collect</h2>
-    <p>When you create an account, we collect your name, email address, and a password. Your password is handled securely by our authentication provider (Supabase) and is never stored in plain text.</p>
-    <p>When you use the app, we collect your cognitive training scores, session history, mood and sleep check-in responses, and app usage data. This data is used to personalize your AI coach experience and generate your cognitive health reports.</p>
-    <p>If you upload a profile photo, it is stored locally on your device and is not transmitted to our servers.</p>
+  <h3>Information you provide directly</h3>
+  <ul>
+    <li><strong>Account information:</strong> Your name and email address when you create an account</li>
+    <li><strong>Daily check-in data:</strong> Your mood rating (1–5) and sleep quality selection before each session — used only to personalise your training</li>
+    <li><strong>Password:</strong> Stored securely using industry-standard encryption — we never store plain-text passwords</li>
+  </ul>
 
-    <h2>How We Use Your Information</h2>
-    <p>We use your information to provide and personalize the Zenelia experience, including generating AI coach messages tailored to your training history, mood, and sleep patterns. We use your email address to send transactional emails such as account confirmation, password reset, premium welcome emails, and monthly health reports (when you request them).</p>
-    <p>We do not sell, rent, or share your personal information with third parties for marketing purposes.</p>
+  <h3>Information collected automatically</h3>
+  <ul>
+    <li><strong>Session data:</strong> Your scores, domain performance, and session dates — used to track your progress and adapt difficulty</li>
+    <li><strong>Usage data:</strong> How you interact with the app (screens visited, features used) — used to improve the product</li>
+    <li><strong>Device information:</strong> Device type, operating system version — used for technical support and compatibility</li>
+  </ul>
 
-    <h2>Third-Party Services</h2>
-    <p>Zenelia uses the following third-party services to operate:</p>
-    <p>Supabase — authentication and data storage. Your account data and training progress are stored securely on Supabase's infrastructure. RevenueCat — subscription management. RevenueCat processes your subscription status but does not have access to your training data. Anthropic — AI coach messages. Your cognitive data (scores, mood, sleep) is sent to Anthropic's Claude API to generate personalized coach messages. No personally identifiable information (name, email) is included in these requests. Resend — email delivery. Used to send transactional emails from hello@zenelia.ai.</p>
+  <h3>Information we do NOT collect</h3>
+  <ul>
+    <li>We do not collect your location</li>
+    <li>We do not access your contacts, camera, or microphone</li>
+    <li>We do not collect biometric data</li>
+    <li>We do not collect financial information — all payments are processed by Apple via In-App Purchase</li>
+  </ul>
 
-    <h2>Data Retention</h2>
-    <p>Your data is retained as long as your account is active. If you delete your account through the Privacy & Data screen in the app, your account is marked for deletion immediately and your data is permanently purged from our servers within 30 days. If you change your mind within that 30-day window, contact hello@zenelia.ai to recover your account.</p>
+  <h2 id="use">3. How We Use Your Data</h2>
+  <p>We use your data solely to provide and improve the Zenelia service:</p>
+  <ul>
+    <li>To create and manage your account</li>
+    <li>To personalise your daily training sessions based on your mood, sleep, and performance history</li>
+    <li>To calculate and display your cognitive progress over time</li>
+    <li>To generate your monthly AI health report</li>
+    <li>To adapt the difficulty of activities to your current performance level</li>
+    <li>To send you important service communications (account updates, policy changes)</li>
+    <li>To improve the app based on aggregated, anonymised usage patterns</li>
+  </ul>
+  <p>We never use your data for advertising, never sell it to third parties, and never share it with data brokers.</p>
 
-    <h2>Data Export</h2>
-    <p>You can export all of your data at any time from the Privacy & Data screen in the app. The export includes your profile information, complete session history, domain scores, and all training data in a readable format.</p>
+  <h2 id="ai">4. AI Processing</h2>
+  <p>Zenelia uses AI technology to power several features including your daily coaching message, adaptive difficulty, and monthly health report. Here is how this works:</p>
+  <ul>
+    <li><strong>Provider:</strong> Zenelia uses the Anthropic Claude API to generate personalised coaching messages and health reports</li>
+    <li><strong>What is sent:</strong> When generating a coaching message or report, limited relevant information is sent to the AI — this may include your first name, mood rating, sleep rating, and aggregate performance scores. No sensitive personal identifiers are included</li>
+    <li><strong>Data retention by AI provider:</strong> Anthropic processes this data to generate responses and does not use it to train their models. Please refer to <a href="https://www.anthropic.com/privacy">Anthropic's Privacy Policy</a> for their data handling practices</li>
+    <li><strong>No medical diagnosis:</strong> AI-generated content in Zenelia is for informational and motivational purposes only. It does not constitute medical advice or diagnosis</li>
+  </ul>
 
-    <h2>Children's Privacy</h2>
-    <p>Zenelia is not directed at children under the age of 13. We do not knowingly collect personal information from children under 13. If we learn that we have collected information from a child under 13, we will delete that information promptly.</p>
+  <h2 id="sharing">5. Data Sharing</h2>
+  <p>We share your data only in the following limited circumstances:</p>
+  <ul>
+    <li><strong>Supabase:</strong> Our database and authentication provider. Your account data and session history are stored on Supabase's infrastructure. Supabase is SOC 2 Type 2 certified. See <a href="https://supabase.com/privacy">Supabase's Privacy Policy</a></li>
+    <li><strong>Anthropic:</strong> For AI-powered features as described above</li>
+    <li><strong>Apple:</strong> Payment processing for subscriptions and in-app purchases is handled entirely by Apple. We never see your payment card details</li>
+    <li><strong>RevenueCat:</strong> Subscription management. RevenueCat receives anonymised purchase data to manage your subscription status. See <a href="https://www.revenuecat.com/privacy">RevenueCat's Privacy Policy</a></li>
+    <li><strong>Legal requirements:</strong> We may disclose your data if required by law, court order, or to protect the rights and safety of our users</li>
+  </ul>
+  <p>We do not sell, rent, or trade your personal information to any third party for marketing purposes.</p>
 
-    <h2>Security</h2>
-    <p>We implement industry-standard security measures to protect your data, including encrypted data transmission (TLS/HTTPS), secure authentication, and access controls. However, no method of electronic storage or transmission is 100% secure.</p>
+  <h2 id="storage">6. Data Storage & Security</h2>
+  <p>Your data is stored on Supabase's secure cloud infrastructure in the United States. We implement the following security measures:</p>
+  <ul>
+    <li>All data in transit is encrypted using TLS 1.2 or higher</li>
+    <li>All data at rest is encrypted using AES-256</li>
+    <li>Passwords are hashed using bcrypt — never stored in plain text</li>
+    <li>Row-level security ensures users can only access their own data</li>
+    <li>Access to production systems is restricted to authorised personnel only</li>
+  </ul>
 
-    <h2>Changes to This Policy</h2>
-    <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated effective date. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
+  <h2 id="retention">7. Data Retention</h2>
+  <p>We retain your personal data for as long as your account is active. Specifically:</p>
+  <ul>
+    <li><strong>Account data:</strong> Retained until you request deletion or close your account</li>
+    <li><strong>Session history:</strong> Retained for the lifetime of your account to maintain your progress history</li>
+    <li><strong>Deleted accounts:</strong> When you request account deletion, your personal data is permanently deleted within 30 days. Anonymised, aggregated data may be retained for product improvement purposes</li>
+  </ul>
 
-    <h2>Contact Us</h2>
-    <p>If you have any questions about this Privacy Policy or your data, contact us at hello@zenelia.ai.</p>
+  <h2 id="rights">8. Your Rights</h2>
+  <p>You have the following rights regarding your personal data:</p>
+  <ul>
+    <li><strong>Access:</strong> Request a copy of the personal data we hold about you</li>
+    <li><strong>Correction:</strong> Request correction of inaccurate data</li>
+    <li><strong>Deletion:</strong> Request permanent deletion of your account and all associated data</li>
+    <li><strong>Portability:</strong> Request your data in a machine-readable format</li>
+    <li><strong>Withdrawal of consent:</strong> Withdraw consent for data processing at any time by deleting your account</li>
+  </ul>
+  <p>To exercise any of these rights, contact us at <a href="mailto:hello@zenelia.ai">hello@zenelia.ai</a>. We will respond to all requests within 30 days.</p>
+  <p><strong>To delete your account:</strong> Open Zenelia → Profile → Privacy & Data → Delete My Account. Your data will be permanently removed from our servers within 30 days. If you change your mind within that window, email <a href="mailto:hello@zenelia.ai">hello@zenelia.ai</a> and we will recover it.</p>
 
-    <p>Avasy Inc.<br>Ontario, Canada</p>
-  </div>
+  <h2 id="children">9. Children's Privacy</h2>
+  <p>Zenelia is not directed at children under the age of 13. We do not knowingly collect personal information from children under 13. If you believe a child under 13 has provided us with personal information, please contact us at <a href="mailto:hello@zenelia.ai">hello@zenelia.ai</a> and we will delete that information immediately.</p>
+  <p>For users between 13 and 18, we recommend parental guidance when using the app.</p>
 
-  <div class="footer">
-    <p>© 2026 Avasy Inc. · <a href="/">Zenelia</a> · <a href="/support">Support</a> · <a href="mailto:hello@zenelia.ai">hello@zenelia.ai</a></p>
-  </div>
+  <h2 id="changes">10. Changes to This Policy</h2>
+  <p>We may update this Privacy Policy from time to time. When we make material changes, we will notify you by updating the "Last updated" date at the top of this page and, where appropriate, by sending you an email notification.</p>
+  <p>Your continued use of Zenelia after any changes constitutes your acceptance of the updated Privacy Policy.</p>
+
+  <h2 id="contact">11. Contact Us</h2>
+  <p>If you have any questions, concerns, or requests regarding this Privacy Policy or how we handle your data, please contact us:</p>
+  <ul>
+    <li><strong>Email:</strong> <a href="mailto:hello@zenelia.ai">hello@zenelia.ai</a></li>
+    <li><strong>Company:</strong> Avasy Inc.</li>
+    <li><strong>Address:</strong> Ontario, Canada</li>
+  </ul>
+  <p>We take privacy seriously and will respond to all enquiries within 5 business days.</p>
+</div>
+
+<footer>
+  <div class="logo">Zenelia</div>
+  <p>© 2026 Avasy Inc. · Ontario, Canada</p>
+  <p><a href="/support.html">Support</a></p>
+</footer>
 
 </body>
 </html>
