@@ -1,133 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Support — Zenelia</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Jost', sans-serif; background: #F7F3EE; color: #1C3A2E; }
-    .header {
-      background: #1C3A2E;
-      padding: 32px 24px;
-      text-align: center;
-    }
-    .header a {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 22px;
-      font-weight: 500;
-      color: #FDFBF8;
-      text-decoration: none;
-      letter-spacing: 0.04em;
-    }
-    .content {
-      max-width: 680px;
-      margin: 0 auto;
-      padding: 48px 24px 80px;
-    }
-    h1 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 36px;
-      font-weight: 500;
-      margin-bottom: 16px;
-    }
-    .intro {
-      font-size: 18px;
-      line-height: 1.7;
-      color: #5C6E66;
-      margin-bottom: 40px;
-    }
-    h2 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 22px;
-      font-weight: 500;
-      margin-top: 36px;
-      margin-bottom: 12px;
-    }
-    p {
-      font-size: 16px;
-      line-height: 1.75;
-      color: #5C6E66;
-      margin-bottom: 16px;
-    }
-    a { color: #5BA890; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .contact-card {
-      background: #fff;
-      border-radius: 16px;
-      padding: 32px 28px;
-      box-shadow: 0 2px 16px rgba(28,58,46,0.05);
-      margin: 40px 0;
-      text-align: center;
-    }
-    .contact-card .email {
-      font-size: 22px;
-      font-weight: 500;
-      color: #1C3A2E;
-      margin-bottom: 8px;
-    }
-    .contact-card p {
-      font-size: 15px;
-      color: #8a9590;
-      margin-bottom: 0;
-    }
-    .footer {
-      text-align: center;
-      padding: 40px 24px;
-      font-size: 14px;
-      color: #8a9590;
-      border-top: 1px solid #e8e4de;
-    }
-    .footer a { color: #5BA890; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Support — Zenelia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--forest:#1C3A2E;--parchment:#F7F3EE;--seafoam:#5BA890;--gold:#B8966E;--ink:#2C3E36;--inkSoft:#5C6E66;--inkGhost:#8a9590;--warmWhite:#FDFBF8;}
+body{font-family:'Jost',sans-serif;background:var(--parchment);color:var(--forest);}
+a{color:var(--seafoam);text-decoration:none;}
+a:hover{text-decoration:underline;}
+
+.header{background:var(--forest);padding:24px 32px;display:flex;align-items:center;justify-content:space-between;}
+.header .logo{font-family:'Playfair Display',serif;font-size:20px;font-weight:500;color:var(--warmWhite);text-decoration:none;letter-spacing:0.04em;}
+.header .back{font-size:14px;color:rgba(253,251,248,0.6);text-decoration:none;}
+.header .back:hover{color:var(--warmWhite);}
+
+.content{max-width:720px;margin:0 auto;padding:48px 24px 80px;}
+h1{font-family:'Playfair Display',serif;font-size:38px;font-weight:500;margin-bottom:12px;}
+.intro{font-size:17px;line-height:1.75;color:var(--inkSoft);margin-bottom:40px;}
+
+.contact-card{background:#fff;border-radius:16px;padding:36px 28px;box-shadow:0 2px 16px rgba(28,58,46,0.05);text-align:center;margin-bottom:48px;}
+.contact-card h2{font-family:'Playfair Display',serif;font-size:20px;font-weight:500;margin-bottom:16px;color:var(--forest);}
+.contact-card .email{font-size:22px;font-weight:500;color:var(--forest);margin-bottom:8px;}
+.contact-card .email a{color:var(--forest);text-decoration:none;}
+.contact-card .email a:hover{color:var(--seafoam);}
+.contact-card .response{font-size:14px;color:var(--inkGhost);margin-bottom:20px;}
+.contact-card .btn{display:inline-block;background:var(--seafoam);color:#fff;padding:12px 28px;border-radius:100px;font-size:15px;font-weight:500;text-decoration:none;}
+.contact-card .btn:hover{background:#4E9680;text-decoration:none;}
+
+.faq-label{font-size:13px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--inkGhost);margin-bottom:8px;}
+.faq-group{font-family:'Playfair Display',serif;font-size:22px;font-weight:500;color:var(--forest);margin-top:40px;margin-bottom:20px;padding-bottom:8px;border-bottom:1px solid #e8e4de;}
+
+.faq{margin-bottom:12px;}
+.faq summary{font-size:16px;font-weight:500;color:var(--forest);cursor:pointer;padding:14px 0;list-style:none;display:flex;justify-content:space-between;align-items:center;}
+.faq summary::after{content:'+';font-size:20px;color:var(--inkGhost);font-weight:300;flex-shrink:0;margin-left:16px;transition:transform 0.2s;}
+.faq[open] summary::after{content:'−';}
+.faq summary::-webkit-details-marker{display:none;}
+.faq .answer{font-size:15px;line-height:1.75;color:var(--inkSoft);padding:0 0 16px;border-bottom:1px solid #f0ece5;}
+.faq .answer a{color:var(--seafoam);}
+
+.delete-section{background:#fff;border-radius:16px;padding:28px 24px;box-shadow:0 2px 12px rgba(28,58,46,0.04);margin-top:40px;}
+.delete-section h3{font-family:'Playfair Display',serif;font-size:18px;font-weight:500;margin-bottom:12px;color:var(--forest);}
+.delete-section ol{padding-left:20px;margin:0;}
+.delete-section li{font-size:15px;line-height:1.8;color:var(--inkSoft);}
+
+footer{text-align:center;padding:40px 24px;font-size:13px;color:var(--inkGhost);border-top:1px solid #e8e4de;}
+footer .logo{font-family:'Playfair Display',serif;font-size:16px;font-weight:500;color:var(--forest);margin-bottom:8px;}
+footer a{color:var(--seafoam);text-decoration:none;}
+
+@media(max-width:600px){
+  h1{font-size:28px;}
+}
+</style>
 </head>
 <body>
 
-  <div class="header">
-    <a href="/">Zenelia</a>
+<div class="header">
+  <a href="/index.html" class="logo">Zenelia</a>
+  <a href="/index.html" class="back">← Back to Zenelia</a>
+</div>
+
+<div class="content">
+  <h1>Support</h1>
+  <p class="intro">We're here to help. Find answers to common questions or reach out directly — we respond within 1 business day.</p>
+
+  <div class="contact-card">
+    <h2>Get in touch directly</h2>
+    <p style="font-size:15px;color:var(--inkSoft);margin-bottom:16px;">Can't find what you're looking for? Email us and we'll get back to you within 1 business day.</p>
+    <div class="email"><a href="mailto:hello@zenelia.ai">hello@zenelia.ai</a></div>
+    <div class="response">Response within 1 business day</div>
+    <a class="btn" href="mailto:hello@zenelia.ai">Send Email →</a>
   </div>
 
-  <div class="content">
-    <h1>Support</h1>
-    <p class="intro">We're here to help. Whether you have a question about your account, a technical issue, or feedback about the app, reach out and we'll get back to you as soon as we can.</p>
+  <div class="faq-label">Frequently Asked Questions</div>
 
-    <div class="contact-card">
-      <div class="email"><a href="mailto:hello@zenelia.ai">hello@zenelia.ai</a></div>
-      <p>We typically respond within 24 hours.</p>
-    </div>
+  <div class="faq-group">Getting Started</div>
 
-    <h2>Frequently Asked Questions</h2>
+  <details class="faq">
+    <summary>How do I create an account?</summary>
+    <div class="answer">Open Zenelia and tap "Try It Free" on the welcome screen. After completing a quick demo session you'll be prompted to create a free account with your name, email, and password. Your 7-day Premium trial starts immediately — no credit card required.</div>
+  </details>
 
-    <h2>What is Zenelia?</h2>
-    <p>Zenelia is a daily brain training app with a personal AI coach. Each 90-second session covers four cognitive domains — working memory, processing speed, attention, and language. Your AI coach adapts every session based on your performance, mood, and sleep patterns.</p>
+  <details class="faq">
+    <summary>What is included in the free trial?</summary>
+    <div class="answer">Your 7-day free trial includes full access to all Premium features — the complete brain training library, AI daily coaching, full insights dashboard, and monthly health report. No credit card is required to start the trial.</div>
+  </details>
 
-    <h2>Is Zenelia free?</h2>
-    <p>Zenelia offers a free tier with 4 brain games and 2 sessions per week. Premium unlocks all 12 games, unlimited daily training, the full AI coach experience, monthly health reports, and all difficulty levels. You can start a 7-day free trial from the Premium tab in the app.</p>
+  <details class="faq">
+    <summary>What happens when my trial ends?</summary>
+    <div class="answer">When your 7-day trial ends, you'll be prompted to choose a subscription plan to continue. If you don't subscribe, you'll lose access to Premium features but keep 4 games with 2 sessions per week. Your progress and data are always saved regardless of your subscription status.</div>
+  </details>
 
-    <h2>How do I cancel my subscription?</h2>
-    <p>You can cancel your subscription at any time through your iPhone's Settings app. Go to Settings → tap your name at the top → Subscriptions → Zenelia → Cancel Subscription. You'll keep access until the end of your current billing period.</p>
+  <div class="faq-group">Subscriptions & Billing</div>
 
-    <h2>How do I delete my account?</h2>
-    <p>Open the app → go to your Profile → tap Privacy & Data → Delete My Account. Your account will be marked for deletion immediately and your data will be permanently removed from our servers within 30 days. If you change your mind within that window, email us at hello@zenelia.ai.</p>
+  <details class="faq">
+    <summary>How do I manage or cancel my subscription?</summary>
+    <div class="answer">All subscriptions are managed through Apple. To manage or cancel: go to your iPhone Settings → tap your name at the top → Subscriptions → find Zenelia → Cancel Subscription. You can also visit <a href="https://apps.apple.com/account/subscriptions">apps.apple.com/account/subscriptions</a>. Cancelling stops future renewals but you keep access until the end of your current billing period.</div>
+  </details>
 
-    <h2>How do I export my data?</h2>
-    <p>Go to your Profile → Privacy & Data → Export My Data. This generates a file containing your complete training history, scores, and profile information.</p>
+  <details class="faq">
+    <summary>Can I get a refund?</summary>
+    <div class="answer">All purchases are processed by Apple. To request a refund, visit <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a> and select your Zenelia purchase. Apple handles all refund decisions in accordance with their refund policy.</div>
+  </details>
 
-    <h2>Is my data shared with anyone?</h2>
-    <p>No. We do not sell, rent, or share your personal data with third parties for marketing purposes. Your cognitive data is used only to personalize your AI coach experience and generate your health reports. See our <a href="/privacy">Privacy Policy</a> for full details.</p>
+  <details class="faq">
+    <summary>I purchased Lifetime access — what does that include?</summary>
+    <div class="answer">Lifetime access includes everything in the Yearly plan — full brain training library, AI daily coach, full insights, and monthly health report — with no recurring fees, ever. All future feature updates are included. Lifetime access is a one-time purchase.</div>
+  </details>
 
-    <h2>What is the ACTIVE Trial?</h2>
-    <p>The ACTIVE (Advanced Cognitive Training for Independent and Vital Elderly) Trial is one of the largest randomized controlled studies of cognitive training in older adults. It followed over 2,800 participants for more than a decade and found that regular, short cognitive training sessions produced measurable improvements in mental sharpness lasting up to 10 years. Zenelia's exercises are based on the same cognitive training paradigms used in this study.</p>
+  <details class="faq">
+    <summary>How do I restore my purchases on a new device?</summary>
+    <div class="answer">Sign in to Zenelia with your account email and password on your new device. Your subscription status and all progress data will restore automatically. If your subscription doesn't appear, go to the Premium tab and tap "Restore Purchases," or contact us at <a href="mailto:hello@zenelia.ai">hello@zenelia.ai</a>.</div>
+  </details>
 
-    <h2>Is Zenelia a medical device?</h2>
-    <p>No. Zenelia is not a medical device and does not diagnose, treat, or prevent any disease. It is a cognitive training tool designed to help build a daily brain exercise habit. Consult your healthcare provider with any questions about your cognitive health.</p>
+  <div class="faq-group">Using Zenelia</div>
+
+  <details class="faq">
+    <summary>How does the AI coach work?</summary>
+    <div class="answer">Before each session, Zenelia asks about your mood and last night's sleep. Your AI coach uses this information — along with your recent performance history — to select today's 4 activities and set the right difficulty level for each domain. The AI coach also generates personalised observations in your Insights tab and writes your monthly health report.</div>
+  </details>
+
+  <details class="faq">
+    <summary>Why does difficulty change between sessions?</summary>
+    <div class="answer">Zenelia uses adaptive difficulty — your level in each domain is calculated from your last 3 sessions. If you're performing well, difficulty increases to keep you in the growth zone. If you've had a tough session or a low-sleep day, it eases to match your current capacity. This is normal and intentional.</div>
+  </details>
+
+  <details class="faq">
+    <summary>Is Zenelia a medical device or treatment?</summary>
+    <div class="answer">No. Zenelia is a cognitive training app informed by published research. It is not a medical device, does not diagnose any condition, and is not a treatment for any medical condition. The AI-generated reports are for informational and motivational purposes only. Always consult a qualified healthcare professional for medical advice.</div>
+  </details>
+
+  <div class="faq-group">Privacy & Data</div>
+
+  <details class="faq">
+    <summary>What data does Zenelia collect?</summary>
+    <div class="answer">Zenelia collects your name, email, session performance data, and daily mood/sleep check-in responses. We do not collect your location, contacts, biometrics, or payment information. For full details see our <a href="/privacy.html">Privacy Policy</a>.</div>
+  </details>
+
+  <details class="faq">
+    <summary>Is my data sold to third parties?</summary>
+    <div class="answer">Never. We do not sell, rent, or share your personal data with third parties for advertising or commercial purposes. Your data is used only to provide the Zenelia service. See our <a href="/privacy.html">Privacy Policy</a> for complete details.</div>
+  </details>
+
+  <div class="delete-section">
+    <h3>How to Delete Your Account</h3>
+    <p style="font-size:15px;color:var(--inkSoft);margin-bottom:12px;">You can request permanent deletion of your account and all associated data at any time. Your data will be permanently deleted within 30 days of your request.</p>
+    <ol>
+      <li>Cancel your subscription first via iPhone Settings → your name → Subscriptions → Zenelia → Cancel</li>
+      <li>Open Zenelia → Profile → Privacy & Data → Delete My Account</li>
+      <li>Your account will be marked for deletion immediately and data purged within 30 days</li>
+      <li>If you change your mind within 30 days, email <a href="mailto:hello@zenelia.ai">hello@zenelia.ai</a> to recover it</li>
+    </ol>
   </div>
+</div>
 
-  <div class="footer">
-    <p>© 2026 Avasy Inc. · <a href="/">Zenelia</a> · <a href="/privacy">Privacy Policy</a> · <a href="mailto:hello@zenelia.ai">hello@zenelia.ai</a></p>
-  </div>
+<footer>
+  <div class="logo">Zenelia</div>
+  <p>© 2026 Avasy Inc. · Ontario, Canada</p>
+  <p><a href="/privacy.html">Privacy Policy</a> · <a href="https://avasy.ca">Avasy Inc.</a></p>
+</footer>
 
 </body>
 </html>
