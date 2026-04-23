@@ -2,166 +2,237 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Support — Zenelia</title>
+<meta name="description" content="Get help with Zenelia — FAQs, account support, and contact information.">
+<link rel="canonical" href="https://zenelia.health/support">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%231C3A2E'/><circle cx='16' cy='16' r='6' fill='none' stroke='%235BA890' stroke-width='1.5'/><circle cx='16' cy='16' r='3' fill='%235BA890'/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Outfit:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-:root{--forest:#1C3A2E;--parchment:#F7F3EE;--seafoam:#5BA890;--gold:#B8966E;--ink:#2C3E36;--inkSoft:#5C6E66;--inkGhost:#8a9590;--warmWhite:#FDFBF8;}
-body{font-family:'Jost',sans-serif;background:var(--parchment);color:var(--forest);}
-a{color:var(--seafoam);text-decoration:none;}
-a:hover{text-decoration:underline;}
+:root{--forest:#1C3A2E;--forest-light:#2d5040;--seafoam:#5BA890;--seafoam-pale:rgba(91,168,144,0.12);--seafoam-soft:#7bbfaa;--gold:#B8966E;--parchment:#F7F3EE;--warm-white:#FDFAF6;--ink:#111e18;--ink-soft:#3d5548;--ink-ghost:#7a9a8e;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--warm-white);color:var(--ink);font-family:'Outfit',sans-serif;font-weight:300;line-height:1.8;}
+nav{background:var(--forest);padding:20px 48px;display:flex;justify-content:space-between;align-items:center;}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;color:rgba(253,250,246,0.9);letter-spacing:0.06em;text-decoration:none;}
+.nav-back{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(253,250,246,0.45);text-decoration:none;display:flex;align-items:center;gap:8px;transition:color .3s;}
+.nav-back:hover{color:rgba(253,250,246,0.8);}
+.hero-bar{background:var(--forest);padding:48px 48px 56px;}
+.hero-bar h1{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,56px);font-weight:300;color:var(--warm-white);letter-spacing:-0.01em;margin-bottom:12px;}
+.hero-bar p{font-size:16px;color:rgba(253,250,246,0.55);max-width:480px;}
+.content{max-width:800px;margin:0 auto;padding:72px 48px 120px;}
 
-.header{background:var(--forest);padding:24px 32px;display:flex;align-items:center;justify-content:space-between;}
-.header .logo{font-family:'Playfair Display',serif;font-size:20px;font-weight:500;color:var(--warmWhite);text-decoration:none;letter-spacing:0.04em;}
-.header .back{font-size:14px;color:rgba(253,251,248,0.6);text-decoration:none;}
-.header .back:hover{color:var(--warmWhite);}
+/* Contact card */
+.contact-card{background:var(--forest);border-radius:20px;padding:40px;margin-bottom:64px;display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;}
+.contact-left h2{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--warm-white);margin-bottom:10px;}
+.contact-left p{font-size:15px;color:rgba(253,250,246,0.55);line-height:1.7;}
+.contact-right{text-align:center;}
+.contact-email{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;color:var(--seafoam-soft);margin-bottom:8px;}
+.contact-note{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(253,250,246,0.25);}
+.btn-email{display:inline-block;margin-top:16px;padding:12px 28px;background:var(--seafoam);color:var(--forest);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;border-radius:100px;font-weight:500;transition:background .3s;}
+.btn-email:hover{background:var(--seafoam-soft);}
 
-.content{max-width:720px;margin:0 auto;padding:48px 24px 80px;}
-h1{font-family:'Playfair Display',serif;font-size:38px;font-weight:500;margin-bottom:12px;}
-.intro{font-size:17px;line-height:1.75;color:var(--inkSoft);margin-bottom:40px;}
+/* FAQ */
+.faq-section-title{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--seafoam);margin-bottom:24px;display:flex;align-items:center;gap:14px;}
+.faq-section-title::before{content:'';width:28px;height:1px;background:var(--seafoam);}
+.faq-group-title{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:400;color:var(--forest);margin-top:48px;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid rgba(91,168,144,0.15);}
+.faq{border:1px solid rgba(91,168,144,0.1);border-radius:14px;margin-bottom:10px;overflow:hidden;transition:border-color .3s;}
+.faq:hover{border-color:rgba(91,168,144,0.25);}
+.faq-q{padding:20px 24px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;user-select:none;}
+.faq-q-text{font-size:16px;font-weight:400;color:var(--ink);}
+.faq-icon{width:24px;height:24px;border-radius:50%;background:var(--seafoam-pale);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;color:var(--seafoam);transition:transform .3s;}
+.faq.open .faq-icon{transform:rotate(45deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s;}
+.faq.open .faq-a{max-height:400px;padding:0 24px 20px;}
+.faq-a p{font-size:15px;color:var(--ink-soft);line-height:1.75;}
+.faq-a a{color:var(--seafoam);}
 
-.contact-card{background:#fff;border-radius:16px;padding:36px 28px;box-shadow:0 2px 16px rgba(28,58,46,0.05);text-align:center;margin-bottom:48px;}
-.contact-card h2{font-family:'Playfair Display',serif;font-size:20px;font-weight:500;margin-bottom:16px;color:var(--forest);}
-.contact-card .email{font-size:22px;font-weight:500;color:var(--forest);margin-bottom:8px;}
-.contact-card .email a{color:var(--forest);text-decoration:none;}
-.contact-card .email a:hover{color:var(--seafoam);}
-.contact-card .response{font-size:14px;color:var(--inkGhost);margin-bottom:20px;}
-.contact-card .btn{display:inline-block;background:var(--seafoam);color:#fff;padding:12px 28px;border-radius:100px;font-size:15px;font-weight:500;text-decoration:none;}
-.contact-card .btn:hover{background:#4E9680;text-decoration:none;}
+/* Account deletion */
+.deletion-box{background:var(--parchment);border:1px solid rgba(91,168,144,0.15);border-radius:16px;padding:32px;margin-top:48px;}
+.deletion-box h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:var(--forest);margin-bottom:12px;}
+.deletion-box p{font-size:15px;color:var(--ink-soft);margin-bottom:16px;}
+.deletion-box ol{padding-left:20px;}
+.deletion-box li{font-size:15px;color:var(--ink-soft);margin-bottom:8px;}
 
-.faq-label{font-size:13px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--inkGhost);margin-bottom:8px;}
-.faq-group{font-family:'Playfair Display',serif;font-size:22px;font-weight:500;color:var(--forest);margin-top:40px;margin-bottom:20px;padding-bottom:8px;border-bottom:1px solid #e8e4de;}
+footer{background:var(--forest);padding:40px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--warm-white);}
+.footer-copy{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(253,250,246,0.25);}
+.footer-links{display:flex;gap:24px;}
+.footer-links a{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(253,250,246,0.3);text-decoration:none;}
 
-.faq{margin-bottom:12px;}
-.faq summary{font-size:16px;font-weight:500;color:var(--forest);cursor:pointer;padding:14px 0;list-style:none;display:flex;justify-content:space-between;align-items:center;}
-.faq summary::after{content:'+';font-size:20px;color:var(--inkGhost);font-weight:300;flex-shrink:0;margin-left:16px;transition:transform 0.2s;}
-.faq[open] summary::after{content:'−';}
-.faq summary::-webkit-details-marker{display:none;}
-.faq .answer{font-size:15px;line-height:1.75;color:var(--inkSoft);padding:0 0 16px;border-bottom:1px solid #f0ece5;}
-.faq .answer a{color:var(--seafoam);}
-
-.delete-section{background:#fff;border-radius:16px;padding:28px 24px;box-shadow:0 2px 12px rgba(28,58,46,0.04);margin-top:40px;}
-.delete-section h3{font-family:'Playfair Display',serif;font-size:18px;font-weight:500;margin-bottom:12px;color:var(--forest);}
-.delete-section ol{padding-left:20px;margin:0;}
-.delete-section li{font-size:15px;line-height:1.8;color:var(--inkSoft);}
-
-footer{text-align:center;padding:40px 24px;font-size:13px;color:var(--inkGhost);border-top:1px solid #e8e4de;}
-footer .logo{font-family:'Playfair Display',serif;font-size:16px;font-weight:500;color:var(--forest);margin-bottom:8px;}
-footer a{color:var(--seafoam);text-decoration:none;}
-
-@media(max-width:600px){
-  h1{font-size:28px;}
+@media(max-width:768px){
+  nav,footer{padding:18px 24px;}
+  .hero-bar{padding:40px 24px 48px;}
+  .content{padding:48px 24px 80px;}
+  .contact-card{grid-template-columns:1fr;}
+  .footer-links{display:none;}
 }
 </style>
 </head>
 <body>
 
-<div class="header">
-  <a href="/index.html" class="logo">Zenelia</a>
-  <a href="/index.html" class="back">← Back to Zenelia</a>
+<nav>
+  <a href="index.html" class="nav-logo">Zenelia</a>
+  <a href="index.html" class="nav-back">← Back to Zenelia</a>
+</nav>
+
+<div class="hero-bar">
+  <h1>Support</h1>
+  <p>We're here to help. Find answers to common questions or reach out directly — we respond within 1 business day.</p>
 </div>
 
 <div class="content">
-  <h1>Support</h1>
-  <p class="intro">We're here to help. Find answers to common questions or reach out directly — we respond within 1 business day.</p>
 
+  <!-- Contact -->
   <div class="contact-card">
-    <h2>Get in touch directly</h2>
-    <p style="font-size:15px;color:var(--inkSoft);margin-bottom:16px;">Can't find what you're looking for? Email us and we'll get back to you within 1 business day.</p>
-    <div class="email"><a href="mailto:hello@zenelia.ai">hello@zenelia.ai</a></div>
-    <div class="response">Response within 1 business day</div>
-    <a class="btn" href="mailto:hello@zenelia.ai">Send Email →</a>
+    <div class="contact-left">
+      <h2>Get in touch directly</h2>
+      <p>Can't find what you're looking for? Email us and we'll get back to you within 1 business day.</p>
+    </div>
+    <div class="contact-right">
+      <div class="contact-email">hello@zenelia.ai</div>
+      <div class="contact-note">Response within 1 business day</div>
+      <a href="mailto:hello@zenelia.ai" class="btn-email">Send Email →</a>
+    </div>
   </div>
 
-  <div class="faq-label">Frequently Asked Questions</div>
+  <!-- FAQ -->
+  <p class="faq-section-title">Frequently Asked Questions</p>
 
-  <div class="faq-group">Getting Started</div>
+  <div class="faq-group-title">Getting Started</div>
 
-  <details class="faq">
-    <summary>How do I create an account?</summary>
-    <div class="answer">Open Zenelia and tap "Try It Free" on the welcome screen. After completing a quick demo session you'll be prompted to create a free account with your name, email, and password. Your 7-day Premium trial starts immediately — no credit card required.</div>
-  </details>
+  <div class="faq">
+    <div class="faq-q" onclick="toggle(this)">
+      <span class="faq-q-text">How do I create an account?</span>
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-a"><p>Open Zenelia and tap "Try It Free" on the welcome screen. After completing a quick demo session you'll be prompted to create a free account with your name, email, and password. Your 7-day Premium trial starts immediately — no credit card required.</p></div>
+  </div>
 
-  <details class="faq">
-    <summary>What is included in the free trial?</summary>
-    <div class="answer">Your 7-day free trial includes full access to all Premium features — the complete brain training library, AI daily coaching, full insights dashboard, and monthly health report. No credit card is required to start the trial.</div>
-  </details>
+  <div class="faq">
+    <div class="faq-q" onclick="toggle(this)">
+      <span class="faq-q-text">What is included in the free trial?</span>
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-a"><p>Your 7-day free trial includes full access to all Premium features — the complete brain training library, AI daily coaching, full insights dashboard, and monthly health report. No credit card is required to start the trial.</p></div>
+  </div>
 
-  <details class="faq">
-    <summary>What happens when my trial ends?</summary>
-    <div class="answer">When your 7-day trial ends, you'll be prompted to choose a subscription plan to continue. If you don't subscribe, you'll lose access to Premium features but keep 4 games with 2 sessions per week. Your progress and data are always saved regardless of your subscription status.</div>
-  </details>
+  <div class="faq">
+    <div class="faq-q" onclick="toggle(this)">
+      <span class="faq-q-text">What happens when my trial ends?</span>
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-a"><p>When your 7-day trial ends, you'll be prompted to choose a subscription plan to continue. If you don't subscribe, you'll lose access to Premium features but keep 4 games with 2 sessions per week. Your progress and data are always saved regardless of your subscription status.</p></div>
+  </div>
 
-  <div class="faq-group">Subscriptions & Billing</div>
+  <div class="faq-group-title">Subscriptions & Billing</div>
 
-  <details class="faq">
-    <summary>How do I manage or cancel my subscription?</summary>
-    <div class="answer">All subscriptions are managed through Apple. To manage or cancel: go to your iPhone Settings → tap your name at the top → Subscriptions → find Zenelia → Cancel Subscription. You can also visit <a href="https://apps.apple.com/account/subscriptions">apps.apple.com/account/subscriptions</a>. Cancelling stops future renewals but you keep access until the end of your current billing period.</div>
-  </details>
+  <div class="faq">
+    <div class="faq-q" onclick="toggle(this)">
+      <span class="faq-q-text">How do I manage or cancel my subscription?</span>
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-a"><p>All subscriptions are managed through Apple. To manage or cancel: go to your iPhone Settings → tap your name at the top → Subscriptions → find Zenelia → Cancel Subscription. You can also visit <a href="https://apps.apple.com/account/subscriptions" target="_blank">apps.apple.com/account/subscriptions</a>. Cancelling stops future renewals but you keep access until the end of your current billing period.</p></div>
+  </div>
 
-  <details class="faq">
-    <summary>Can I get a refund?</summary>
-    <div class="answer">All purchases are processed by Apple. To request a refund, visit <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a> and select your Zenelia purchase. Apple handles all refund decisions in accordance with their refund policy.</div>
-  </details>
+  <div class="faq">
+    <div class="faq-q" onclick="toggle(this)">
+      <span class="faq-q-text">Can I get a refund?</span>
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-a"><p>All purchases are processed by Apple. To request a refund, visit <a href="https://reportaproblem.apple.com" target="_blank">reportaproblem.apple.com</a> and select your Zenelia purchase. Apple handles all refund decisions in accordance with their refund policy.</p></div>
+  </div>
 
-  <details class="faq">
-    <summary>I purchased Lifetime access — what does that include?</summary>
-    <div class="answer">Lifetime access includes everything in the Yearly plan — full brain training library, AI daily coach, full insights, and monthly health report — with no recurring fees, ever. All future feature updates are included. Lifetime access is a one-time purchase.</div>
-  </details>
+  <div class="faq">
+    <div class="faq-q" onclick="toggle(this)">
+      <span class="faq-q-text">I purchased Lifetime access — what does that include?</span>
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-a"><p>Lifetime access includes everything in the Yearly plan — full brain training library, AI daily coach, full insights, and monthly health report — with no recurring fees, ever. All future feature updates are included. Lifetime access is a one-time purchase.</p></div>
+  </div>
 
-  <details class="faq">
-    <summary>How do I restore my purchases on a new device?</summary>
-    <div class="answer">Sign in to Zenelia with your account email and password on your new device. Your subscription status and all progress data will restore automatically. If your subscription doesn't appear, go to the Premium tab and tap "Restore Purchases," or contact us at <a href="mailto:hello@zenelia.ai">hello@zenelia.ai</a>.</div>
-  </details>
+  <div class="faq">
+    <div class="faq-q" onclick="toggle(this)">
+      <span class="faq-q-text">How do I restore my purchases on a new device?</span>
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-a"><p>Sign in to Zenelia with your account email and password on your new device. Your subscription status and all progress data will restore automatically. If your subscription doesn't appear, go to the Premium tab and tap "Restore Purchases," or contact us at <a href="mailto:hello@zenelia.ai">hello@zenelia.ai</a>.</p></div>
+  </div>
 
-  <div class="faq-group">Using Zenelia</div>
+  <div class="faq-group-title">Using Zenelia</div>
 
-  <details class="faq">
-    <summary>How does the AI coach work?</summary>
-    <div class="answer">Before each session, Zenelia asks about your mood and last night's sleep. Your AI coach uses this information — along with your recent performance history — to select today's 4 activities and set the right difficulty level for each domain. The AI coach also generates personalised observations in your Insights tab and writes your monthly health report.</div>
-  </details>
+  <div class="faq">
+    <div class="faq-q" onclick="toggle(this)">
+      <span class="faq-q-text">How does the AI coach work?</span>
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-a"><p>Before each session, Zenelia asks about your mood and last night's sleep. Your AI coach uses this information — along with your recent performance history — to select today's 4 activities and set the right difficulty level for each domain. The AI coach also generates personalised observations in your Insights tab and writes your monthly health report.</p></div>
+  </div>
 
-  <details class="faq">
-    <summary>Why does difficulty change between sessions?</summary>
-    <div class="answer">Zenelia uses adaptive difficulty — your level in each domain is calculated from your last 3 sessions. If you're performing well, difficulty increases to keep you in the growth zone. If you've had a tough session or a low-sleep day, it eases to match your current capacity. This is normal and intentional.</div>
-  </details>
+  <div class="faq">
+    <div class="faq-q" onclick="toggle(this)">
+      <span class="faq-q-text">Why does difficulty change between sessions?</span>
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-a"><p>Zenelia uses adaptive difficulty — your level in each domain is calculated from your last 3 sessions. If you're performing well, difficulty increases to keep you in the growth zone. If you've had a tough session or a low-sleep day, it eases to match your current capacity. This is normal and intentional.</p></div>
+  </div>
 
-  <details class="faq">
-    <summary>Is Zenelia a medical device or treatment?</summary>
-    <div class="answer">No. Zenelia is a cognitive training app informed by published research. It is not a medical device, does not diagnose any condition, and is not a treatment for any medical condition. The AI-generated reports are for informational and motivational purposes only. Always consult a qualified healthcare professional for medical advice.</div>
-  </details>
+  <div class="faq">
+    <div class="faq-q" onclick="toggle(this)">
+      <span class="faq-q-text">Is Zenelia a medical device or treatment?</span>
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-a"><p>No. Zenelia is a cognitive training app informed by published research. It is not a medical device, does not diagnose any condition, and is not a treatment for any medical condition. The AI-generated reports are for informational and motivational purposes only. Always consult a qualified healthcare professional for medical advice.</p></div>
+  </div>
 
-  <div class="faq-group">Privacy & Data</div>
+  <div class="faq-group-title">Privacy & Data</div>
 
-  <details class="faq">
-    <summary>What data does Zenelia collect?</summary>
-    <div class="answer">Zenelia collects your name, email, session performance data, and daily mood/sleep check-in responses. We do not collect your location, contacts, biometrics, or payment information. For full details see our <a href="/privacy.html">Privacy Policy</a>.</div>
-  </details>
+  <div class="faq">
+    <div class="faq-q" onclick="toggle(this)">
+      <span class="faq-q-text">What data does Zenelia collect?</span>
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-a"><p>Zenelia collects your name, email, session performance data, and daily mood/sleep check-in responses. We do not collect your location, contacts, biometrics, or payment information. For full details see our <a href="privacy.html">Privacy Policy</a>.</p></div>
+  </div>
 
-  <details class="faq">
-    <summary>Is my data sold to third parties?</summary>
-    <div class="answer">Never. We do not sell, rent, or share your personal data with third parties for advertising or commercial purposes. Your data is used only to provide the Zenelia service. See our <a href="/privacy.html">Privacy Policy</a> for complete details.</div>
-  </details>
+  <div class="faq">
+    <div class="faq-q" onclick="toggle(this)">
+      <span class="faq-q-text">Is my data sold to third parties?</span>
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-a"><p>Never. We do not sell, rent, or share your personal data with third parties for advertising or commercial purposes. Your data is used only to provide the Zenelia service. See our <a href="privacy.html">Privacy Policy</a> for complete details.</p></div>
+  </div>
 
-  <div class="delete-section">
+  <!-- Account deletion -->
+  <div class="deletion-box">
     <h3>How to Delete Your Account</h3>
-    <p style="font-size:15px;color:var(--inkSoft);margin-bottom:12px;">You can request permanent deletion of your account and all associated data at any time. Your data will be permanently deleted within 30 days of your request.</p>
+    <p>You can request permanent deletion of your account and all associated data at any time. Your data will be permanently deleted within 30 days of your request.</p>
     <ol>
       <li>Cancel your subscription first via iPhone Settings → your name → Subscriptions → Zenelia → Cancel</li>
       <li>Open Zenelia → Profile → Privacy & Data → Delete My Account</li>
       <li>Your account will be marked for deletion immediately and data purged within 30 days</li>
-      <li>If you change your mind within 30 days, email <a href="mailto:hello@zenelia.ai">hello@zenelia.ai</a> to recover it</li>
+      <li>If you change your mind within 30 days, email <a href="mailto:hello@zenelia.ai" style="color:var(--seafoam);">hello@zenelia.ai</a> to recover it</li>
     </ol>
   </div>
+
 </div>
 
 <footer>
-  <div class="logo">Zenelia</div>
-  <p>© 2026 Avasy Inc. · Ontario, Canada</p>
-  <p><a href="/privacy.html">Privacy Policy</a> · <a href="https://avasy.ca">Avasy Inc.</a></p>
+  <div class="footer-logo">Zenelia</div>
+  <div class="footer-copy">© 2026 Avasy Inc. · Ontario, Canada</div>
+  <div class="footer-links">
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="https://avasy.ca">Avasy Inc.</a>
+  </div>
 </footer>
 
+<script>
+function toggle(el) {
+  const faq = el.parentElement;
+  const wasOpen = faq.classList.contains('open');
+  document.querySelectorAll('.faq').forEach(f => f.classList.remove('open'));
+  if (!wasOpen) faq.classList.add('open');
+}
+</script>
 </body>
 </html>
