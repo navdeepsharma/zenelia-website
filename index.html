@@ -7,9 +7,9 @@
 <meta name="description" content="Zenelia is an AI-powered cognitive training app that adapts to your brain daily. Research-backed. 90 seconds. Available on iOS.">
 <meta property="og:title" content="Zenelia — AI Brain Health. 90 Seconds a Day.">
 <meta property="og:description" content="An AI coach that reads your mood, adapts your training, and protects your mind for the long term.">
-<meta property="og:url" content="https://zenelia.health">
+<meta property="og:url" content="https://zenelia.ai">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="canonical" href="https://zenelia.health">
+<link rel="canonical" href="https://zenelia.ai">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%231C3A2E'/><circle cx='16' cy='16' r='6' fill='none' stroke='%235BA890' stroke-width='1.5'/><circle cx='16' cy='16' r='3' fill='%235BA890'/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Outfit:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
@@ -499,11 +499,9 @@ footer{background:var(--forest);padding:60px 48px 40px;display:flex;justify-cont
 </footer>
 
 <script>
-// Nav scroll
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 40); });
 
-// Reveal
 const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.1 });
