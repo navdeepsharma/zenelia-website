@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Email Confirmed — Zenelia</title>
 <meta name="description" content="Your Zenelia email has been confirmed.">
+<meta name="robots" content="noindex">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%231C3A2E'/><circle cx='16' cy='16' r='6' fill='none' stroke='%235BA890' stroke-width='1.5'/><circle cx='16' cy='16' r='3' fill='%235BA890'/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Outfit:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
@@ -19,18 +20,28 @@ nav{background:var(--forest);padding:20px 48px;display:flex;justify-content:spac
 .nav-back:hover{color:rgba(253,250,246,0.8);}
 
 .main{flex:1;display:flex;align-items:center;justify-content:center;padding:60px 24px;}
-.card{text-align:center;max-width:480px;width:100%;background:var(--parchment);border:1px solid rgba(91,168,144,0.15);border-radius:20px;padding:64px 48px;}
+.card{text-align:center;max-width:480px;width:100%;background:var(--parchment);border:1px solid rgba(91,168,144,0.15);border-radius:20px;padding:56px 44px;}
 
-.check-circle{width:72px;height:72px;border-radius:50%;background:var(--seafoam);display:flex;align-items:center;justify-content:center;margin:0 auto 28px;box-shadow:0 4px 16px rgba(91,168,144,0.3);}
-.check-circle svg{width:32px;height:32px;stroke:var(--warm-white);stroke-width:2.5;fill:none;stroke-linecap:round;stroke-linejoin:round;}
+.icon-circle{width:72px;height:72px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 28px;}
+.icon-circle.seafoam-pale{background:var(--seafoam-pale);}
+.icon-circle.seafoam{background:var(--seafoam);box-shadow:0 4px 16px rgba(91,168,144,0.3);}
+.icon-circle svg{width:32px;height:32px;stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round;}
+.icon-circle.seafoam-pale svg{stroke:var(--seafoam);}
+.icon-circle.seafoam svg{stroke:var(--warm-white);stroke-width:2.5;}
 
-h1{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;color:var(--forest);letter-spacing:-0.01em;margin-bottom:16px;}
+h1{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:300;color:var(--forest);letter-spacing:-0.01em;margin-bottom:14px;line-height:1.2;}
 .lead{font-size:16px;color:var(--ink-soft);margin-bottom:32px;line-height:1.7;}
 
-.btn{display:inline-block;padding:16px 40px;background:var(--forest);color:var(--warm-white);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;border-radius:100px;font-weight:500;transition:background .3s,transform .3s;}
+.btn{display:inline-block;padding:16px 40px;background:var(--forest);color:var(--warm-white);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;border-radius:100px;font-weight:500;transition:background .3s,transform .3s;border:none;cursor:pointer;width:100%;margin-top:8px;}
 .btn:hover{background:var(--forest-light);transform:translateY(-2px);}
 
-.subtle{font-family:'Outfit',sans-serif;font-size:13px;letter-spacing:0;text-transform:none;color:var(--ink-ghost);margin-top:32px;padding-top:24px;border-top:1px solid rgba(91,168,144,0.15);line-height:1.7;}
+.state{display:none;}
+.state.active{display:block;}
+
+.spinner{display:inline-block;width:32px;height:32px;border:3px solid var(--seafoam-pale);border-top-color:var(--seafoam);border-radius:50%;animation:spin 0.8s linear infinite;margin-bottom:20px;}
+@keyframes spin{to{transform:rotate(360deg);}}
+
+.subtle{font-family:'Outfit',sans-serif;font-size:13px;color:var(--ink-ghost);margin-top:32px;padding-top:24px;border-top:1px solid rgba(91,168,144,0.15);line-height:1.7;}
 .subtle a{color:var(--seafoam);text-decoration:none;}
 .subtle a:hover{color:var(--forest);text-decoration:underline;}
 
@@ -40,8 +51,8 @@ footer{background:var(--forest);padding:32px 48px;display:flex;justify-content:s
 
 @media(max-width:768px){
   nav,footer{padding:18px 24px;}
-  .card{padding:48px 28px;}
-  h1{font-size:28px;}
+  .card{padding:44px 28px;}
+  h1{font-size:26px;}
 }
 </style>
 </head>
@@ -54,19 +65,30 @@ footer{background:var(--forest);padding:32px 48px;display:flex;justify-content:s
 
 <div class="main">
   <div class="card">
-    <div class="check-circle">
-      <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+
+    <!-- STATE 1: Opening the app -->
+    <div id="state-redirecting" class="state active">
+      <div class="spinner"></div>
+      <h1>Opening Zenelia</h1>
+      <p class="lead">Redirecting you to the Zenelia app to finish signing in...</p>
     </div>
 
-    <h1>Email confirmed</h1>
-    <p class="lead">Your email is verified. Open Zenelia on your iPhone to sign in and start your first session.</p>
+    <!-- STATE 2: Fallback if app didn't open -->
+    <div id="state-fallback" class="state">
+      <div class="icon-circle seafoam">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h1>Email confirmed</h1>
+      <p class="lead">Your email is verified. Open Zenelia on your iPhone to sign in and start your first session.</p>
 
-    <a href="zenelia://" class="btn">Open Zenelia →</a>
+      <a href="#" id="open-app-btn" class="btn">Open Zenelia →</a>
 
-    <div class="subtle">
-      If the app doesn't open automatically, open <strong>Zenelia</strong> on your iPhone and tap <strong>Sign in</strong> with your email and password.<br><br>
-      Need help? Email <a href="mailto:hello@zenelia.ai">hello@zenelia.ai</a>
+      <div class="subtle">
+        Don't have Zenelia installed? Find it on the App Store.<br><br>
+        Need help? Email <a href="mailto:hello@zenelia.ai">hello@zenelia.ai</a>
+      </div>
     </div>
+
   </div>
 </div>
 
@@ -74,6 +96,25 @@ footer{background:var(--forest);padding:32px 48px;display:flex;justify-content:s
   <div class="footer-logo">Zenelia</div>
   <div class="footer-copy">© 2026 Avasy Inc. · Ontario, Canada</div>
 </footer>
+
+<script>
+(function() {
+  var hash = window.location.hash || '';
+  var deepLink = 'auxia://auth-confirm' + hash;
+
+  // Update the fallback button to use the same deep link
+  document.getElementById('open-app-btn').href = deepLink;
+
+  // Fire the custom scheme redirect immediately
+  window.location.href = deepLink;
+
+  // If we're still here after 2.5 seconds, the app didn't open — show fallback
+  setTimeout(function() {
+    document.querySelectorAll('.state').forEach(function(el) { el.classList.remove('active'); });
+    document.getElementById('state-fallback').classList.add('active');
+  }, 2500);
+})();
+</script>
 
 </body>
 </html>
