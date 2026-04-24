@@ -66,22 +66,22 @@ footer{background:var(--forest);padding:32px 48px;display:flex;justify-content:s
 <div class="main">
   <div class="card">
 
-    <!-- STATE 1: Opening the app -->
-    <div id="state-redirecting" class="state active">
+    <!-- STATE 1: Opening the app (iOS only) -->
+    <div id="state-redirecting" class="state">
       <div class="spinner"></div>
       <h1>Opening Zenelia</h1>
       <p class="lead">Redirecting you to the Zenelia app to finish signing in...</p>
     </div>
 
-    <!-- STATE 2: Fallback if app didn't open -->
-    <div id="state-fallback" class="state">
+    <!-- STATE 2: Confirmation / fallback -->
+    <div id="state-fallback" class="state active">
       <div class="icon-circle seafoam">
         <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
       </div>
       <h1>Email confirmed</h1>
       <p class="lead">Your email is verified. Open Zenelia on your iPhone to sign in and start your first session.</p>
 
-      <a href="#" id="open-app-btn" class="btn">Open Zenelia →</a>
+      <a href="#" id="open-app-btn" class="btn" style="display:none;">Open Zenelia →</a>
 
       <div class="subtle">
         Don't have Zenelia installed? Find it on the App Store.<br><br>
@@ -99,20 +99,38 @@ footer{background:var(--forest);padding:32px 48px;display:flex;justify-content:s
 
 <script>
 (function() {
+  // Detect iOS — where auxia:// can actually work
+  function isIOS() {
+    var ua = navigator.userAgent || navigator.vendor || window.opera || '';
+    if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) return true;
+    if (ua.indexOf('Mac') !== -1 && 'ontouchend' in document) return true;
+    return false;
+  }
+
+  function showState(id) {
+    var states = document.querySelectorAll('.state');
+    for (var i = 0; i < states.length; i++) states[i].classList.remove('active');
+    document.getElementById(id).classList.add('active');
+  }
+
   var hash = window.location.hash || '';
   var deepLink = 'auxia://auth-confirm' + hash;
+  var openAppBtn = document.getElementById('open-app-btn');
+  openAppBtn.href = deepLink;
 
-  // Update the fallback button to use the same deep link
-  document.getElementById('open-app-btn').href = deepLink;
+  if (isIOS()) {
+    // iOS: try the bridge to open Zenelia
+    showState('state-redirecting');
+    window.location.href = deepLink;
 
-  // Fire the custom scheme redirect immediately
-  window.location.href = deepLink;
-
-  // If we're still here after 2.5 seconds, the app didn't open — show fallback
-  setTimeout(function() {
-    document.querySelectorAll('.state').forEach(function(el) { el.classList.remove('active'); });
-    document.getElementById('state-fallback').classList.add('active');
-  }, 2500);
+    // If still here after 2.5s, show the fallback with the manual button
+    setTimeout(function() {
+      openAppBtn.style.display = '';
+      showState('state-fallback');
+    }, 2500);
+  }
+  // Desktop/non-iOS: stay on fallback, don't show the app button (it would fail)
+  // The confirmation message itself is the success result
 })();
 </script>
 
