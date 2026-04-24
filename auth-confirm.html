@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Outfit:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
-:root{--forest:#1C3A2E;--seafoam:#5BA890;--seafoam-pale:rgba(91,168,144,0.12);--seafoam-soft:#7bbfaa;--gold:#B8966E;--parchment:#F7F3EE;--warm-white:#FDFAF6;--ink:#111e18;--ink-soft:#3d5548;--ink-ghost:#7a9a8e;}
+:root{--forest:#1C3A2E;--forest-light:#2d5040;--seafoam:#5BA890;--seafoam-pale:rgba(91,168,144,0.12);--seafoam-soft:#7bbfaa;--gold:#B8966E;--parchment:#F7F3EE;--warm-white:#FDFAF6;--ink:#111e18;--ink-soft:#3d5548;--ink-ghost:#7a9a8e;}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 body{background:var(--warm-white);color:var(--ink);font-family:'Outfit',sans-serif;font-weight:300;line-height:1.8;min-height:100vh;display:flex;flex-direction:column;}
 
@@ -20,13 +20,19 @@ nav{background:var(--forest);padding:20px 48px;display:flex;justify-content:spac
 
 .main{flex:1;display:flex;align-items:center;justify-content:center;padding:60px 24px;}
 .card{text-align:center;max-width:480px;width:100%;background:var(--parchment);border:1px solid rgba(91,168,144,0.15);border-radius:20px;padding:64px 48px;}
+
 .check-circle{width:72px;height:72px;border-radius:50%;background:var(--seafoam);display:flex;align-items:center;justify-content:center;margin:0 auto 28px;box-shadow:0 4px 16px rgba(91,168,144,0.3);}
 .check-circle svg{width:32px;height:32px;stroke:var(--warm-white);stroke-width:2.5;fill:none;stroke-linecap:round;stroke-linejoin:round;}
+
 h1{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;color:var(--forest);letter-spacing:-0.01em;margin-bottom:16px;}
-.lead{font-size:16px;color:var(--ink-soft);margin-bottom:16px;line-height:1.7;}
-.subtle{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-ghost);margin-top:32px;padding-top:24px;border-top:1px solid rgba(91,168,144,0.15);}
+.lead{font-size:16px;color:var(--ink-soft);margin-bottom:32px;line-height:1.7;}
+
+.btn{display:inline-block;padding:16px 40px;background:var(--forest);color:var(--warm-white);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;border-radius:100px;font-weight:500;transition:background .3s,transform .3s;}
+.btn:hover{background:var(--forest-light);transform:translateY(-2px);}
+
+.subtle{font-family:'Outfit',sans-serif;font-size:13px;letter-spacing:0;text-transform:none;color:var(--ink-ghost);margin-top:32px;padding-top:24px;border-top:1px solid rgba(91,168,144,0.15);line-height:1.7;}
 .subtle a{color:var(--seafoam);text-decoration:none;}
-.subtle a:hover{color:var(--forest);}
+.subtle a:hover{color:var(--forest);text-decoration:underline;}
 
 footer{background:var(--forest);padding:32px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
 .footer-logo{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--warm-white);}
@@ -49,14 +55,17 @@ footer{background:var(--forest);padding:32px 48px;display:flex;justify-content:s
 <div class="main">
   <div class="card">
     <div class="check-circle">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <polyline points="20 6 9 17 4 12"/>
-      </svg>
+      <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
     </div>
+
     <h1>Email confirmed</h1>
-    <p class="lead">Your email has been verified. You can now open the Zenelia app and sign in to your account.</p>
+    <p class="lead">Your email is verified. Open Zenelia on your iPhone to sign in and start your first session.</p>
+
+    <a href="zenelia://" class="btn">Open Zenelia →</a>
+
     <div class="subtle">
-      <a href="index.html">← Back to Zenelia</a>
+      If the app doesn't open automatically, open <strong>Zenelia</strong> on your iPhone and tap <strong>Sign in</strong> with your email and password.<br><br>
+      Need help? Email <a href="mailto:hello@zenelia.ai">hello@zenelia.ai</a>
     </div>
   </div>
 </div>
