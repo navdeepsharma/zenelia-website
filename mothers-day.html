@@ -64,8 +64,8 @@ body{font-family:'Jost',sans-serif;background:var(--blush);color:var(--forest);m
   </div>
   <div class="field"><label>Your Phone (optional)</label><input type="tel" id="buyerPhone" placeholder="(555) 123-4567" autocomplete="tel"><div class="hint">In case we need to reach you about the gift</div></div>
   <div class="row">
-    <div class="field"><label>Mom's Name</label><input type="text" id="recipientName" placeholder="Mom's name"></div>
-    <div class="field"><label>Mom's Email</label><input type="email" id="recipientEmail" placeholder="mom@email.com"></div>
+    <div class="field"><label>Mom's Name (optional)</label><input type="text" id="recipientName" placeholder="Mom's name"></div>
+    <div class="field"><label>Mom's Email (optional)</label><input type="email" id="recipientEmail" placeholder="mom@email.com"><div class="hint">Don't know her email? Leave blank and we'll send you a gift code to share</div></div>
   </div>
   <div class="field"><label>Your Message to Mom (optional)</label><textarea id="personalMessage" placeholder="Happy Mother's Day! I got you this because I want you taking care of your brain the way you've always taken care of us..."></textarea></div>
   <button class="btn btn-primary" id="giftBtn" onclick="handleGift()">🌸 Send Gift to Mom — $129.99 →</button>
@@ -98,9 +98,9 @@ async function handleGift(){
   const loadingEl=document.getElementById("loading");
   const btn=document.getElementById("giftBtn");
   errorEl.style.display="none";
-  if(!buyerName||!buyerEmail||!recipientName||!recipientEmail){errorEl.textContent="Please fill in all required fields.";errorEl.style.display="block";return;}
+  if(!buyerName||!buyerEmail){errorEl.textContent="Please fill in all required fields.";errorEl.style.display="block";return;}
   if(!buyerEmail.includes("@")||!recipientEmail.includes("@")){errorEl.textContent="Please enter valid email addresses.";errorEl.style.display="block";return;}
-  if(buyerEmail.toLowerCase()===recipientEmail.toLowerCase()){errorEl.textContent="The recipient email should be different from yours.";errorEl.style.display="block";return;}
+  if(recipientEmail&&buyerEmail.toLowerCase()===recipientEmail.toLowerCase()){errorEl.textContent="The recipient email should be different from yours.";errorEl.style.display="block";return;}
   btn.disabled=true;loadingEl.style.display="block";
   try{
     const res=await fetch(CHECKOUT_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({buyerName,buyerEmail,buyerPhone,recipientName,recipientEmail,personalMessage})});
