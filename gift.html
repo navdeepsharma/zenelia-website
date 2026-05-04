@@ -11,23 +11,26 @@
 *{margin:0;padding:0;box-sizing:border-box;}
 :root{--forest:#1C3A2E;--parchment:#F7F3EE;--seafoam:#5BA890;--gold:#B8966E;--ink:#2C3E36;--inkSoft:#5C6E66;--inkGhost:#8a9590;--warmWhite:#FDFBF8;--rose:#C97070;}
 body{font-family:'Jost',sans-serif;background:var(--parchment);color:var(--forest);min-height:100vh;}
-.hero{background:linear-gradient(165deg,var(--forest),#2A5040);color:var(--warmWhite);padding:60px 24px 80px;text-align:center;}
+.nav{padding:18px 24px;display:flex;align-items:center;justify-content:center;gap:16px;border-bottom:1px solid rgba(28,58,46,0.06);}
+.nav a{text-decoration:none;}
+.nav .logo{font-family:'Playfair Display',serif;font-size:22px;font-weight:500;color:var(--forest);letter-spacing:0.04em;}
+.hero{background:linear-gradient(165deg,var(--forest),#2A5040);color:var(--warmWhite);padding:52px 24px 80px;text-align:center;}
 .hero .badge{font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--seafoam);margin-bottom:16px;}
-.hero h1{font-family:'Playfair Display',serif;font-size:42px;font-weight:500;line-height:1.2;max-width:600px;margin:0 auto 16px;}
+.hero h1{font-family:'Playfair Display',serif;font-size:38px;font-weight:500;line-height:1.2;max-width:600px;margin:0 auto 16px;}
 .hero h1 em{font-style:italic;color:var(--seafoam);}
-.hero p{font-size:18px;color:rgba(253,251,248,0.75);max-width:500px;margin:0 auto 8px;line-height:1.6;}
-.hero .price{font-family:'Playfair Display',serif;font-size:36px;font-weight:600;color:var(--warmWhite);margin-top:24px;}
+.hero p{font-size:17px;color:rgba(253,251,248,0.75);max-width:500px;margin:0 auto 8px;line-height:1.6;}
+.hero .price{font-family:'Playfair Display',serif;font-size:34px;font-weight:600;color:var(--warmWhite);margin-top:24px;}
 .hero .price-sub{font-size:14px;color:rgba(253,251,248,0.5);}
-.card{max-width:480px;margin:-40px auto 0;background:#fff;border-radius:24px;padding:40px 32px;box-shadow:0 8px 40px rgba(28,58,46,0.1);position:relative;z-index:10;}
-.card h2{font-family:'Playfair Display',serif;font-size:24px;font-weight:500;margin-bottom:24px;text-align:center;}
-.field{margin-bottom:18px;}
+.card{max-width:480px;margin:-40px auto 0;background:#fff;border-radius:24px;padding:36px 28px;box-shadow:0 8px 40px rgba(28,58,46,0.1);position:relative;z-index:10;}
+.card h2{font-family:'Playfair Display',serif;font-size:22px;font-weight:500;margin-bottom:24px;text-align:center;}
+.field{margin-bottom:16px;}
 .field label{display:block;font-size:14px;font-weight:500;color:var(--ink);margin-bottom:6px;}
 .field input,.field textarea{width:100%;padding:14px 16px;border:1.5px solid #e0dcd6;border-radius:12px;font-family:'Jost',sans-serif;font-size:16px;color:var(--ink);background:var(--parchment);outline:none;transition:border .2s;}
 .field input:focus,.field textarea:focus{border-color:var(--seafoam);}
 .field textarea{resize:none;height:80px;}
 .field .hint{font-size:12px;color:var(--inkGhost);margin-top:4px;}
 .row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
-.btn{display:block;width:100%;padding:18px;border:none;border-radius:100px;font-family:'Jost',sans-serif;font-size:17px;font-weight:600;cursor:pointer;transition:all .2s;text-align:center;margin-top:24px;}
+.btn{display:block;width:100%;padding:18px;border:none;border-radius:100px;font-family:'Jost',sans-serif;font-size:17px;font-weight:600;cursor:pointer;transition:all .2s;text-align:center;margin-top:20px;}
 .btn-primary{background:var(--seafoam);color:var(--warmWhite);}
 .btn-primary:hover{background:#4E9680;}
 .btn-primary:disabled{background:#c0c0c0;cursor:not-allowed;}
@@ -40,17 +43,21 @@ body{font-family:'Jost',sans-serif;background:var(--parchment);color:var(--fores
 .feat p{font-size:14px;color:var(--inkSoft);line-height:1.6;}
 .footer{text-align:center;padding:40px 24px;font-size:13px;color:var(--inkGhost);}
 .footer a{color:var(--seafoam);text-decoration:none;}
-@media(max-width:500px){.hero h1{font-size:32px;}.card{margin:-30px 16px 0;padding:32px 24px;}.row{grid-template-columns:1fr;}}
-.nav{padding:16px 24px;display:flex;align-items:center;justify-content:space-between;max-width:600px;margin:0 auto;}.nav a{text-decoration:none;}.nav .logo{font-family:"Playfair Display",serif;font-size:20px;font-weight:500;color:var(--forest);letter-spacing:0.04em;}.nav .back{font-size:14px;color:var(--inkGhost);}
+@media(max-width:500px){
+  .hero h1{font-size:28px;}
+  .hero .price{font-size:28px;}
+  .card{margin:-30px 16px 0;padding:28px 20px;}
+  .row{grid-template-columns:1fr;}
+}
 </style>
 </head>
 <body>
-<div class="nav"><a href="/" class="logo">Zenelia</a><a href="/" class="back">← Back to Zenelia</a></div>
+<div class="nav"><a href="/" class="logo">Zenelia</a></div>
 <div class="hero">
   <div class="badge">🎁 A Gift That Lasts</div>
   <h1>Give the gift of a <em>sharper mind.</em></h1>
   <p>For parents, grandparents, or anyone who believes their brain is worth protecting. One gift. Lifetime access. No subscriptions.</p>
-  <div class="price">$129.99 <span style="font-size:18px;font-weight:400;">USD</span></div>
+  <div class="price">$129.99 <span style="font-size:16px;font-weight:400;">USD</span></div>
   <div class="price-sub">One-time payment · Lifetime access · All future updates included</div>
 </div>
 <div class="card">
@@ -91,8 +98,9 @@ async function handleGift(){
   const loadingEl=document.getElementById("loading");
   const btn=document.getElementById("giftBtn");
   errorEl.style.display="none";
-  if(!buyerName||!buyerEmail){errorEl.textContent="Please fill in all required fields.";errorEl.style.display="block";return;}
-  if(!buyerEmail.includes("@")||(recipientEmail&&!recipientEmail.includes("@"))){errorEl.textContent="Please enter a valid email address.";errorEl.style.display="block";return;}
+  if(!buyerName||!buyerEmail){errorEl.textContent="Please enter your name and email.";errorEl.style.display="block";return;}
+  if(!buyerEmail.includes("@")){errorEl.textContent="Please enter a valid email address.";errorEl.style.display="block";return;}
+  if(recipientEmail&&!recipientEmail.includes("@")){errorEl.textContent="Please enter a valid recipient email address.";errorEl.style.display="block";return;}
   if(recipientEmail&&buyerEmail.toLowerCase()===recipientEmail.toLowerCase()){errorEl.textContent="The recipient email should be different from yours.";errorEl.style.display="block";return;}
   btn.disabled=true;loadingEl.style.display="block";
   try{
