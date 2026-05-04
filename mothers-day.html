@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27><rect width=%2732%27 height=%2732%27 rx=%278%27 fill=%27%231C3A2E%27/><text x=%2716%27 y=%2723%27 font-family=%27Georgia%27 font-size=%2722%27 fill=%27%23F7F3EE%27 text-anchor=%27middle%27>Z</text></svg>">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Mother's Day Gift — Zenelia Brain Training</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,9 +46,11 @@ body{font-family:'Jost',sans-serif;background:var(--blush);color:var(--forest);m
 .footer{text-align:center;padding:40px 24px;font-size:13px;color:var(--inkGhost);}
 .footer a{color:#C97088;text-decoration:none;}
 @media(max-width:500px){.hero h1{font-size:32px;}.card{margin:-30px 16px 0;padding:32px 24px;}.row{grid-template-columns:1fr;}}
+.nav{padding:16px 24px;display:flex;align-items:center;justify-content:space-between;max-width:600px;margin:0 auto;}.nav a{text-decoration:none;}.nav .logo{font-family:"Playfair Display",serif;font-size:20px;font-weight:500;color:var(--forest);letter-spacing:0.04em;}.nav .back{font-size:14px;color:var(--inkGhost);}
 </style>
 </head>
 <body>
+<div class="nav"><a href="/" class="logo">Zenelia</a><a href="/" class="back">← Back to Zenelia</a></div>
 <div class="hero">
   <div class="badge">🌸 Mother's Day · May 11</div>
   <h1>This Mother's Day, give her something that <em>lasts.</em></h1>
@@ -99,7 +102,7 @@ async function handleGift(){
   const btn=document.getElementById("giftBtn");
   errorEl.style.display="none";
   if(!buyerName||!buyerEmail){errorEl.textContent="Please fill in all required fields.";errorEl.style.display="block";return;}
-  if(!buyerEmail.includes("@")||!recipientEmail.includes("@")){errorEl.textContent="Please enter valid email addresses.";errorEl.style.display="block";return;}
+  if(!buyerEmail.includes("@")||(recipientEmail&&!recipientEmail.includes("@"))){errorEl.textContent="Please enter a valid email address.";errorEl.style.display="block";return;}
   if(recipientEmail&&buyerEmail.toLowerCase()===recipientEmail.toLowerCase()){errorEl.textContent="The recipient email should be different from yours.";errorEl.style.display="block";return;}
   btn.disabled=true;loadingEl.style.display="block";
   try{
