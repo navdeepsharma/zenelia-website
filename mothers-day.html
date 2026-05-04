@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Mother's Day Gift — Zenelia Brain Training</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--forest:#1C3A2E;--parchment:#F7F3EE;--seafoam:#5BA890;--gold:#B8966E;--ink:#2C3E36;--inkSoft:#5C6E66;--inkGhost:#8a9590;--warmWhite:#FDFBF8;--rose:#C97070;--blush:#F5E6E0;}
+body{font-family:'Jost',sans-serif;background:var(--blush);color:var(--forest);min-height:100vh;}
+.hero{background:linear-gradient(165deg,#3D2B2B,#5C3D3D);color:var(--warmWhite);padding:60px 24px 80px;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:"🌸 🌷 🌺";position:absolute;top:20px;left:50%;transform:translateX(-50%);font-size:24px;letter-spacing:20px;opacity:0.3;}
+.hero .badge{font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#E8A0BF;margin-bottom:16px;}
+.hero h1{font-family:'Playfair Display',serif;font-size:42px;font-weight:500;line-height:1.2;max-width:600px;margin:0 auto 16px;}
+.hero h1 em{font-style:italic;color:#E8A0BF;}
+.hero p{font-size:18px;color:rgba(253,251,248,0.75);max-width:520px;margin:0 auto 8px;line-height:1.7;}
+.hero .price{font-family:'Playfair Display',serif;font-size:36px;font-weight:600;color:var(--warmWhite);margin-top:24px;}
+.hero .price-sub{font-size:14px;color:rgba(253,251,248,0.5);}
+.card{max-width:480px;margin:-40px auto 0;background:#fff;border-radius:24px;padding:40px 32px;box-shadow:0 8px 40px rgba(60,40,40,0.12);position:relative;z-index:10;}
+.card h2{font-family:'Playfair Display',serif;font-size:24px;font-weight:500;margin-bottom:6px;text-align:center;}
+.card .sub{font-size:15px;color:var(--inkSoft);text-align:center;margin-bottom:24px;}
+.field{margin-bottom:18px;}
+.field label{display:block;font-size:14px;font-weight:500;color:var(--ink);margin-bottom:6px;}
+.field input,.field textarea{width:100%;padding:14px 16px;border:1.5px solid #e0dcd6;border-radius:12px;font-family:'Jost',sans-serif;font-size:16px;color:var(--ink);background:#FFF9F7;outline:none;transition:border .2s;}
+.field input:focus,.field textarea:focus{border-color:#E8A0BF;}
+.field textarea{resize:none;height:80px;}
+.field .hint{font-size:12px;color:var(--inkGhost);margin-top:4px;}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.btn{display:block;width:100%;padding:18px;border:none;border-radius:100px;font-family:'Jost',sans-serif;font-size:17px;font-weight:600;cursor:pointer;transition:all .2s;text-align:center;margin-top:24px;}
+.btn-primary{background:#C97088;color:var(--warmWhite);}
+.btn-primary:hover{background:#B8607A;}
+.btn-primary:disabled{background:#c0c0c0;cursor:not-allowed;}
+.error{color:var(--rose);font-size:14px;text-align:center;margin-top:12px;display:none;}
+.loading{text-align:center;color:var(--inkGhost);font-size:15px;margin-top:12px;display:none;}
+.why{max-width:480px;margin:48px auto;padding:0 24px;text-align:center;}
+.why h2{font-family:'Playfair Display',serif;font-size:28px;font-weight:500;margin-bottom:16px;}
+.why p{font-size:16px;color:var(--inkSoft);line-height:1.7;margin-bottom:16px;}
+.features{max-width:480px;margin:20px auto 40px;padding:0 24px;}
+.feat{display:flex;gap:14px;margin-bottom:20px;}
+.feat .icon{font-size:20px;flex-shrink:0;margin-top:2px;}
+.feat h3{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:2px;}
+.feat p{font-size:14px;color:var(--inkSoft);line-height:1.6;}
+.footer{text-align:center;padding:40px 24px;font-size:13px;color:var(--inkGhost);}
+.footer a{color:#C97088;text-decoration:none;}
+@media(max-width:500px){.hero h1{font-size:32px;}.card{margin:-30px 16px 0;padding:32px 24px;}.row{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div class="hero">
+  <div class="badge">🌸 Mother's Day · May 11</div>
+  <h1>This Mother's Day, give her something that <em>lasts.</em></h1>
+  <p>Not flowers that fade. Not chocolate that's gone by Monday. Give her a daily habit that protects the brain she's spent a lifetime using for everyone else.</p>
+  <div class="price">$129.99 <span style="font-size:18px;font-weight:400;">USD</span></div>
+  <div class="price-sub">One-time · Lifetime access · No subscriptions ever</div>
+</div>
+<div class="card">
+  <h2>Send Mom a Gift</h2>
+  <p class="sub">She'll receive a beautiful email with your personal message</p>
+  <div class="row">
+    <div class="field"><label>Your Name</label><input type="text" id="buyerName" placeholder="Your name" autocomplete="name"></div>
+    <div class="field"><label>Your Email</label><input type="email" id="buyerEmail" placeholder="you@email.com" autocomplete="email"></div>
+  </div>
+  <div class="field"><label>Your Phone (optional)</label><input type="tel" id="buyerPhone" placeholder="(555) 123-4567" autocomplete="tel"><div class="hint">In case we need to reach you about the gift</div></div>
+  <div class="row">
+    <div class="field"><label>Mom's Name</label><input type="text" id="recipientName" placeholder="Mom's name"></div>
+    <div class="field"><label>Mom's Email</label><input type="email" id="recipientEmail" placeholder="mom@email.com"></div>
+  </div>
+  <div class="field"><label>Your Message to Mom (optional)</label><textarea id="personalMessage" placeholder="Happy Mother's Day! I got you this because I want you taking care of your brain the way you've always taken care of us..."></textarea></div>
+  <button class="btn btn-primary" id="giftBtn" onclick="handleGift()">🌸 Send Gift to Mom — $129.99 →</button>
+  <div id="error" class="error"></div>
+  <div id="loading" class="loading">Preparing your gift...</div>
+  <p style="font-size:12px;color:var(--inkGhost);text-align:center;margin-top:16px;line-height:1.6;">Secure payment via Stripe. Mom will receive a gift email with download instructions. When she signs up, lifetime access activates automatically.</p>
+</div>
+<div class="why">
+  <h2>Why brain training for Mom?</h2>
+  <p>Cognitive changes can begin 15–20 years before any symptoms appear. The ACTIVE Trial — one of the largest studies of brain training in older adults — found that short daily exercises may reduce dementia risk by up to 29% over two decades.</p>
+  <p>Zenelia makes brain training effortless. 90 seconds a day. A personal AI coach. Real science. The perfect gift for the person who's always putting everyone else first.</p>
+</div>
+<div class="features">
+  <div class="feat"><div class="icon">🧠</div><div><h3>15+ Brain Training Games</h3><p>Memory, speed, attention, and language — four domains linked to long-term cognitive health.</p></div></div>
+  <div class="feat"><div class="icon">🤖</div><div><h3>Personal AI Coach</h3><p>Adapts to her mood, sleep, and performance. Personalized insights every session.</p></div></div>
+  <div class="feat"><div class="icon">📊</div><div><h3>Monthly Health Reports</h3><p>AI-written summaries she can share with her doctor at her next appointment.</p></div></div>
+  <div class="feat"><div class="icon">♾️</div><div><h3>Lifetime Access</h3><p>No monthly fees. No renewals. One gift that keeps giving for decades.</p></div></div>
+</div>
+<div class="footer"><p>© 2026 Avasy Inc. · <a href="/">Zenelia</a> · <a href="/privacy.html">Privacy</a> · <a href="/support.html">Support</a> · <a href="mailto:hello@zenelia.ai">hello@zenelia.ai</a></p></div>
+<script>
+const CHECKOUT_URL="https://uvespyvcypudqufojmpk.supabase.co/functions/v1/create-checkout";
+async function handleGift(){
+  const buyerName=document.getElementById("buyerName").value.trim();
+  const buyerEmail=document.getElementById("buyerEmail").value.trim();
+  const buyerPhone=document.getElementById("buyerPhone").value.trim();
+  const recipientName=document.getElementById("recipientName").value.trim();
+  const recipientEmail=document.getElementById("recipientEmail").value.trim();
+  const personalMessage=document.getElementById("personalMessage").value.trim();
+  const errorEl=document.getElementById("error");
+  const loadingEl=document.getElementById("loading");
+  const btn=document.getElementById("giftBtn");
+  errorEl.style.display="none";
+  if(!buyerName||!buyerEmail||!recipientName||!recipientEmail){errorEl.textContent="Please fill in all required fields.";errorEl.style.display="block";return;}
+  if(!buyerEmail.includes("@")||!recipientEmail.includes("@")){errorEl.textContent="Please enter valid email addresses.";errorEl.style.display="block";return;}
+  if(buyerEmail.toLowerCase()===recipientEmail.toLowerCase()){errorEl.textContent="The recipient email should be different from yours.";errorEl.style.display="block";return;}
+  btn.disabled=true;loadingEl.style.display="block";
+  try{
+    const res=await fetch(CHECKOUT_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({buyerName,buyerEmail,buyerPhone,recipientName,recipientEmail,personalMessage})});
+    const data=await res.json();
+    if(data.url){window.location.href=data.url;}
+    else{throw new Error(data.error||"Something went wrong. Please try again.");}
+  }catch(e){errorEl.textContent=e.message||"Something went wrong.";errorEl.style.display="block";btn.disabled=false;loadingEl.style.display="none";}
+}
+</script>
+</body>
+</html>
