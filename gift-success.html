@@ -3,27 +3,33 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Gift Sent — Zenelia</title>
+<title>Gift Purchased — Zenelia</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'Jost',sans-serif;background:#F7F3EE;color:#1C3A2E;min-height:100vh;display:flex;align-items:center;justify-content:center;}
-.card{text-align:center;padding:60px 40px;max-width:480px;}
+.card{text-align:center;padding:60px 40px;max-width:500px;}
 .check{width:80px;height:80px;background:#5BA890;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 28px;color:#FDFBF8;font-size:36px;}
 h1{font-family:'Playfair Display',serif;font-size:32px;font-weight:500;margin-bottom:16px;}
 p{font-size:17px;line-height:1.7;color:#5C6E66;margin-bottom:16px;}
 .subtle{font-size:14px;color:#8a9590;}
 a{color:#5BA890;text-decoration:none;}
+.note{background:#fff;border-radius:16px;padding:24px;margin:24px 0;text-align:left;box-shadow:0 2px 12px rgba(28,58,46,0.06);}
+.note p{font-size:14px;margin-bottom:8px;}
+.note p:last-child{margin-bottom:0;}
 </style>
 </head>
 <body>
 <div class="card">
   <div class="check">✓</div>
-  <h1>Gift sent!</h1>
-  <p>Your recipient will receive a beautiful email with download instructions. When they sign up with their email, lifetime access activates automatically.</p>
-  <p>A receipt has been sent to your email.</p>
+  <h1>Gift purchased!</h1>
+  <p>Check your email for all the details.</p>
+  <div class="note">
+    <p><strong>If you entered the recipient's email:</strong> They've already received a gift email with download instructions. Lifetime access activates automatically when they sign up.</p>
+    <p><strong>If you didn't enter their email:</strong> You've received a gift code in your email. Share it however you'd like — text, card, in person. They can redeem it at <a href="/redeem.html">zenelia.ai/redeem</a>.</p>
+  </div>
   <p class="subtle">Thank you for giving the gift of brain health.</p>
-  <p style="margin-top:24px;"><a href="/">← Back to Zenelia</a></p>
+  <p style="margin-top:20px;"><a href="/">← Back to Zenelia</a></p>
 </div>
 </body>
 </html>
