@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Redeem Your Gift — Zenelia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--forest:#1C3A2E;--parchment:#F7F3EE;--seafoam:#5BA890;--gold:#B8966E;--ink:#2C3E36;--inkSoft:#5C6E66;--inkGhost:#8a9590;--warmWhite:#FDFBF8;--rose:#C97070;}
+body{font-family:'Jost',sans-serif;background:var(--parchment);color:var(--forest);min-height:100vh;}
+.hero{background:linear-gradient(165deg,var(--forest),#2A5040);color:var(--warmWhite);padding:60px 24px 80px;text-align:center;}
+.hero h1{font-family:'Playfair Display',serif;font-size:38px;font-weight:500;margin-bottom:12px;}
+.hero h1 em{font-style:italic;color:var(--seafoam);}
+.hero p{font-size:17px;color:rgba(253,251,248,0.7);max-width:460px;margin:0 auto;line-height:1.6;}
+.card{max-width:440px;margin:-40px auto 0;background:#fff;border-radius:24px;padding:40px 32px;box-shadow:0 8px 40px rgba(28,58,46,0.1);position:relative;z-index:10;}
+.card h2{font-family:'Playfair Display',serif;font-size:22px;font-weight:500;margin-bottom:24px;text-align:center;}
+.field{margin-bottom:18px;}
+.field label{display:block;font-size:14px;font-weight:500;color:var(--ink);margin-bottom:6px;}
+.field input{width:100%;padding:14px 16px;border:1.5px solid #e0dcd6;border-radius:12px;font-family:'Jost',sans-serif;font-size:16px;color:var(--ink);background:var(--parchment);outline:none;transition:border .2s;}
+.field input:focus{border-color:var(--seafoam);}
+.field .hint{font-size:12px;color:var(--inkGhost);margin-top:4px;}
+.code-input{font-family:monospace!important;font-size:20px!important;letter-spacing:3px;text-align:center;text-transform:uppercase;}
+.btn{display:block;width:100%;padding:18px;border:none;border-radius:100px;font-family:'Jost',sans-serif;font-size:17px;font-weight:600;cursor:pointer;transition:all .2s;text-align:center;margin-top:24px;background:var(--seafoam);color:var(--warmWhite);}
+.btn:hover{background:#4E9680;}
+.btn:disabled{background:#c0c0c0;cursor:not-allowed;}
+.error{color:var(--rose);font-size:14px;text-align:center;margin-top:12px;display:none;}
+.loading{text-align:center;color:var(--inkGhost);font-size:15px;margin-top:12px;display:none;}
+.success{display:none;text-align:center;padding:20px 0;}
+.success .check{width:64px;height:64px;background:var(--seafoam);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:var(--warmWhite);font-size:28px;}
+.success h3{font-family:'Playfair Display',serif;font-size:22px;font-weight:500;margin-bottom:12px;}
+.success p{font-size:15px;color:var(--inkSoft);line-height:1.6;margin-bottom:16px;}
+.success .app-btn{display:inline-block;background:var(--forest);color:var(--warmWhite);padding:14px 32px;border-radius:100px;text-decoration:none;font-weight:500;font-size:15px;}
+.success .app-btn:hover{background:#2A5040;}
+.steps{max-width:440px;margin:40px auto;padding:0 24px;}
+.steps h3{font-family:'Playfair Display',serif;font-size:20px;font-weight:500;margin-bottom:16px;text-align:center;}
+.step{display:flex;gap:16px;margin-bottom:16px;}
+.step .num{font-family:'Playfair Display',serif;font-size:28px;color:rgba(91,168,144,0.3);font-weight:600;flex-shrink:0;line-height:1;}
+.step p{font-size:15px;color:var(--inkSoft);line-height:1.6;}
+.footer{text-align:center;padding:40px 24px;font-size:13px;color:var(--inkGhost);}
+.footer a{color:var(--seafoam);text-decoration:none;}
+@media(max-width:500px){.hero h1{font-size:30px;}.card{margin:-30px 16px 0;padding:32px 24px;}}
+</style>
+</head>
+<body>
+<div class="hero">
+  <h1>Redeem your <em>gift.</em></h1>
+  <p>Someone special gave you lifetime access to Zenelia — AI-powered brain training. Enter your gift code below to activate it.</p>
+</div>
+<div class="card">
+  <div id="formSection">
+    <h2>Enter Your Gift Code</h2>
+    <div class="field">
+      <label>Gift Code</label>
+      <input type="text" id="giftCode" class="code-input" placeholder="GIFT-XXXXXXXX" maxlength="13">
+      <div class="hint">The code from the email or message you received</div>
+    </div>
+    <div class="field">
+      <label>Your Email</label>
+      <input type="email" id="redeemEmail" placeholder="your@email.com" autocomplete="email">
+      <div class="hint">Use this same email when you sign up in the Zenelia app</div>
+    </div>
+    <button class="btn" id="redeemBtn" onclick="handleRedeem()">Activate My Gift →</button>
+    <div id="error" class="error"></div>
+    <div id="loading" class="loading">Verifying your gift code...</div>
+  </div>
+  <div id="successSection" class="success">
+    <div class="check">✓</div>
+    <h3>Gift activated!</h3>
+    <p>Your lifetime access is ready. Download Zenelia and sign up with <strong id="confirmedEmail"></strong> — your premium access will activate automatically.</p>
+    <a class="app-btn" href="https://apps.apple.com/app/zenelia/id6761921421">Download Zenelia →</a>
+  </div>
+</div>
+<div class="steps">
+  <h3>How it works</h3>
+  <div class="step"><div class="num">1</div><p>Enter the gift code and your email above</p></div>
+  <div class="step"><div class="num">2</div><p>Download Zenelia from the App Store</p></div>
+  <div class="step"><div class="num">3</div><p>Create an account using the same email</p></div>
+  <div class="step"><div class="num">4</div><p>Lifetime premium access activates automatically — enjoy!</p></div>
+</div>
+<div class="footer"><p>© 2026 Avasy Inc. · <a href="/">Zenelia</a> · <a href="/privacy.html">Privacy</a> · <a href="/support.html">Support</a> · <a href="mailto:hello@zenelia.ai">hello@zenelia.ai</a></p></div>
+<script>
+const REDEEM_URL="https://uvespyvcypudqufojmpk.supabase.co/functions/v1/redeem-gift";
+async function handleRedeem(){
+  const code=document.getElementById("giftCode").value.trim().toUpperCase();
+  const email=document.getElementById("redeemEmail").value.trim();
+  const errorEl=document.getElementById("error");
+  const loadingEl=document.getElementById("loading");
+  const btn=document.getElementById("redeemBtn");
+  errorEl.style.display="none";
+  if(!code){errorEl.textContent="Please enter your gift code.";errorEl.style.display="block";return;}
+  if(!email||!email.includes("@")){errorEl.textContent="Please enter a valid email address.";errorEl.style.display="block";return;}
+  btn.disabled=true;loadingEl.style.display="block";
+  try{
+    const res=await fetch(REDEEM_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({code,email})});
+    const data=await res.json();
+    if(data.success){
+      document.getElementById("formSection").style.display="none";
+      document.getElementById("confirmedEmail").textContent=email;
+      document.getElementById("successSection").style.display="block";
+    }else{
+      throw new Error(data.error||"Something went wrong.");
+    }
+  }catch(e){errorEl.textContent=e.message;errorEl.style.display="block";btn.disabled=false;loadingEl.style.display="none";}
+}
+</script>
+</body>
+</html>
