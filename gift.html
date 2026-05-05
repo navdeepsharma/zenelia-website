@@ -104,7 +104,7 @@ async function handleGift(){
   if(recipientEmail&&buyerEmail.toLowerCase()===recipientEmail.toLowerCase()){errorEl.textContent="The recipient email should be different from yours.";errorEl.style.display="block";return;}
   btn.disabled=true;loadingEl.style.display="block";
   try{
-    const res=await fetch(CHECKOUT_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({buyerName,buyerEmail,buyerPhone,recipientName,recipientEmail,personalMessage})});
+    const res=await fetch(CHECKOUT_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({buyerName,buyerEmail,buyerPhone,recipientName,recipientEmail,personalMessage,returnUrl:"https://zenelia.ai/gift.html"})});
     const data=await res.json();
     if(data.url){window.location.href=data.url;}
     else{throw new Error(data.error||"Something went wrong. Please try again.");}
