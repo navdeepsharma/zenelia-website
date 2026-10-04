@@ -8,25 +8,42 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-:root{--forest:#1C3A2E;--parchment:#F7F3EE;--seafoam:#5BA890;--inkSoft:#5C6E66;--inkGhost:#8a9590;--warmWhite:#FDFBF8;}
+:root{--forest:#1C3A2E;--parchment:#F7F3EE;--seafoam:#5BA890;--gold:#B8966E;--ink:#2C3E36;--inkSoft:#5C6E66;--inkGhost:#8a9590;--warmWhite:#FDFBF8;}
 body{font-family:'Jost',sans-serif;background:var(--parchment);color:var(--forest);}
 a{color:var(--seafoam);text-decoration:none;}
 a:hover{text-decoration:underline;}
+
 .header{background:var(--forest);padding:24px 32px;display:flex;align-items:center;justify-content:space-between;}
 .header .logo{font-family:'Playfair Display',serif;font-size:20px;font-weight:500;color:var(--warmWhite);text-decoration:none;letter-spacing:0.04em;}
 .header .back{font-size:14px;color:rgba(253,251,248,0.6);text-decoration:none;}
 .header .back:hover{color:var(--warmWhite);}
+
 .content{max-width:720px;margin:0 auto;padding:48px 24px 80px;}
 h1{font-family:'Playfair Display',serif;font-size:38px;font-weight:500;margin-bottom:8px;}
-.meta{font-size:14px;color:var(--inkGhost);margin-bottom:40px;}
-h2{font-family:'Playfair Display',serif;font-size:24px;font-weight:500;margin-top:40px;margin-bottom:14px;color:var(--forest);}
+.meta{font-size:14px;color:var(--inkGhost);margin-bottom:16px;}
+.intro{font-size:17px;line-height:1.75;color:var(--inkSoft);margin-bottom:40px;}
+
+.toc{background:#fff;border-radius:14px;padding:24px 28px;margin-bottom:48px;box-shadow:0 2px 12px rgba(28,58,46,0.04);}
+.toc-title{font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--inkGhost);margin-bottom:12px;}
+.toc ol{padding-left:20px;margin:0;}
+.toc li{font-size:15px;line-height:2;color:var(--inkSoft);}
+.toc li a{color:var(--seafoam);text-decoration:none;}
+.toc li a:hover{text-decoration:underline;}
+
+h2{font-family:'Playfair Display',serif;font-size:24px;font-weight:500;margin-top:48px;margin-bottom:14px;color:var(--forest);}
+h3{font-size:16px;font-weight:600;margin-top:20px;margin-bottom:8px;color:var(--forest);}
 p{font-size:16px;line-height:1.75;color:var(--inkSoft);margin-bottom:16px;}
 ul{margin:0 0 16px 20px;}
 li{font-size:15px;line-height:1.75;color:var(--inkSoft);margin-bottom:4px;}
+
 footer{text-align:center;padding:40px 24px;font-size:13px;color:var(--inkGhost);border-top:1px solid #e8e4de;}
 footer .logo{font-family:'Playfair Display',serif;font-size:16px;font-weight:500;color:var(--forest);margin-bottom:8px;}
 footer a{color:var(--seafoam);text-decoration:none;}
-@media(max-width:600px){h1{font-size:28px;}h2{font-size:20px;}}
+
+@media(max-width:600px){
+  h1{font-size:28px;}
+  h2{font-size:20px;}
+}
 </style>
 </head>
 <body>
@@ -38,58 +55,92 @@ footer a{color:var(--seafoam);text-decoration:none;}
 
 <div class="content">
   <h1>Terms of Use</h1>
-  <p class="meta">Last updated: April 2026 · Avasy Inc.</p>
+  <p class="meta">Last updated: September 2026 · Avasy Inc.</p>
+  <p class="intro">These Terms explain the rules for using Zenelia, including what "lifetime access" means and what happens if Zenelia ever changes or closes. We've kept them in plain language.</p>
 
-  <p>These Terms of Use ("Terms") govern your use of the Zenelia mobile application ("App") provided by Avasy Inc. ("we," "us," or "our"). By downloading, installing, or using Zenelia, you agree to these Terms.</p>
+  <div class="toc">
+    <div class="toc-title">Contents</div>
+    <ol>
+      <li><a href="#agree">Agreement</a></li>
+      <li><a href="#medical">Not Medical Advice</a></li>
+      <li><a href="#account">Your Account</a></li>
+      <li><a href="#subs">Subscriptions and Free Trials</a></li>
+      <li><a href="#lifetime">Lifetime Access</a></li>
+      <li><a href="#gifts">Gifts Bought on Our Website</a></li>
+      <li><a href="#changes-service">Changes to Zenelia and Discontinuation</a></li>
+      <li><a href="#transfer">Transfer of the Service</a></li>
+      <li><a href="#use">Acceptable Use</a></li>
+      <li><a href="#data">Your Data</a></li>
+      <li><a href="#ip">Intellectual Property</a></li>
+      <li><a href="#warranty">Disclaimers</a></li>
+      <li><a href="#liability">Limitation of Liability</a></li>
+      <li><a href="#law">Governing Law</a></li>
+      <li><a href="#apple">App Store Terms</a></li>
+      <li><a href="#updates">Changes to These Terms</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ol>
+  </div>
 
-  <h2>1. License</h2>
-  <p>Subject to these Terms, we grant you a limited, non-exclusive, non-transferable, revocable license to use the App for your personal, non-commercial purposes. This license is also governed by the Apple Licensed Application End User License Agreement (EULA), available at <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">apple.com/legal/internet-services/itunes/dev/stdeula</a>.</p>
+  <h2 id="agree">1. Agreement</h2>
+  <p>Zenelia is a product of <strong>Avasy Inc.</strong>, a federally incorporated company in Ontario, Canada (Corporation Number: 924562-6), referred to here as "we" or "us". These Terms apply to the Zenelia app and our websites, including zenelia.ai and zenelia.com. By creating an account, making a purchase, or using Zenelia, you agree to these Terms and to our <a href="/privacy.html">Privacy Policy</a>. If you don't agree, please don't use Zenelia.</p>
 
-  <h2>2. Account</h2>
-  <p>You may create an account using your email address and a password. You are responsible for maintaining the confidentiality of your account credentials and for all activity under your account. You must provide accurate information when creating your account.</p>
+  <h2 id="medical">2. Not Medical Advice</h2>
+  <p>Zenelia is a brain training app for general wellness. It is <strong>not a medical device</strong> and does not diagnose, treat, cure, or prevent any disease or condition, including dementia or Alzheimer's disease. Zenelia's exercises are inspired by published cognitive training research, but Zenelia itself has not been tested in those studies, and your results may vary.</p>
+  <p>Game scores reflect how you performed in the app's games. They naturally vary with sleep, mood, difficulty, and practice, and they are not a medical or cognitive assessment. Monthly training reports summarize your activity and scores only.</p>
+  <p>The AI coach offers general training guidance, can make mistakes, and does not give medical advice. If you have concerns about your memory, thinking, or health, please talk to a qualified healthcare professional. If you are in crisis or at risk of harm, contact local emergency services right away (in the US and Canada, call or text 988).</p>
 
-  <h2>3. Subscriptions and Payments</h2>
-  <p>Zenelia offers free and premium tiers. Premium access is available through the following In-App Purchase options:</p>
+  <h2 id="account">3. Your Account</h2>
+  <p>You must be at least 13 years old to use Zenelia. If you are under 18, or under the age of majority where you live, please use Zenelia with a parent or guardian's permission. Keep your login details secure; you are responsible for activity on your account. Please give accurate information when you sign up.</p>
+
+  <h2 id="subs">4. Subscriptions and Free Trials</h2>
+  <p>Premium subscriptions (monthly or yearly) are sold through Apple's App Store and billed to your Apple ID in your local currency, at the price shown in the app. A subscription renews automatically unless you turn off auto-renew at least 24 hours before the end of the current period. You can manage or cancel it anytime in Settings → Apple ID → Subscriptions.</p>
+  <p>A free trial becomes a paid subscription when it ends unless you cancel at least 24 hours before the trial ends. Refunds for App Store purchases are handled by Apple under Apple's policies, which you can request at reportaproblem.apple.com.</p>
+
+  <h2 id="lifetime">5. Lifetime Access</h2>
+  <p>Lifetime access is a one-time purchase with no renewals. <strong>"Lifetime" means for as long as Zenelia is offered</strong> by us or by a company we transfer it to (see Section 8). It does not mean the lifetime of any person. Lifetime access includes the Premium features available at any given time, which may change as described in Section 7.</p>
+  <p>Gift codes can be redeemed once, on one account, and have no cash value.</p>
+
+  <h2 id="gifts">6. Gifts Bought on Our Website</h2>
+  <p>Gifts bought on our website are processed securely by Stripe, charged in the currency shown at checkout, and delivered to the recipient as a gift code by email. If a gift code has not been redeemed, you can ask for a refund within 30 days of purchase by emailing <a href="mailto:hello@zenelia.ai">hello@zenelia.ai</a>. Redeemed codes are not refundable, except where the law requires otherwise.</p>
+
+  <h2 id="changes-service">7. Changes to Zenelia and Discontinuation</h2>
+  <p>We're always improving Zenelia, so we may add, change, or remove games and features. We may also decide to stop offering Zenelia. If we do, we will give you at least <strong>60 days' notice</strong> in the app or by email, and you will be able to export your data before the service closes.</p>
+  <p>When Zenelia stops being offered, all subscriptions and lifetime access end. We will stop charging for new subscription periods. Nothing in these Terms limits any refund you are entitled to under applicable consumer protection law.</p>
+
+  <h2 id="transfer">8. Transfer of the Service</h2>
+  <p>We may transfer Zenelia, your account, and these Terms to another company, for example if Zenelia is sold or moved to an affiliated company. If that happens, your subscription or lifetime access continues with the new operator under these Terms.</p>
+
+  <h2 id="use">9. Acceptable Use</h2>
+  <p>Please don't misuse Zenelia. That includes trying to hack, reverse engineer, overload, or copy the app or its content; using it for anything illegal; sharing your account to get around limits; or abusing the AI coach. We may suspend or close accounts that break these rules.</p>
+
+  <h2 id="data">10. Your Data</h2>
+  <p>Our <a href="/privacy.html">Privacy Policy</a> explains what we collect and how we use it, including how the AI coach processes your data. You can export your data or delete your account at any time from within the app.</p>
+
+  <h2 id="ip">11. Intellectual Property</h2>
+  <p>Zenelia, its games, content, design, and the Zenelia name belong to Avasy Inc. We give you a personal, non-transferable licence to use Zenelia for your own non-commercial use while these Terms apply.</p>
+
+  <h2 id="warranty">12. Disclaimers</h2>
+  <p>Zenelia is provided "as is" and "as available". We work hard to keep it running well, but we don't promise it will always be available, error-free, or that it will produce any particular result.</p>
+
+  <h2 id="liability">13. Limitation of Liability</h2>
+  <p>To the extent the law allows, Avasy Inc. is not liable for indirect, incidental, special, or consequential damages arising from your use of Zenelia. Our total liability for any claim is limited to the amount you paid us for Zenelia in the 12 months before the claim. Some places don't allow these limits, so they may not apply to you, and nothing here limits rights you have that cannot be waived under consumer protection law.</p>
+
+  <h2 id="law">14. Governing Law</h2>
+  <p>These Terms are governed by the laws of Ontario and the federal laws of Canada that apply there, and disputes will be handled by the courts of Ontario. If you are a consumer, you also keep any protections given to you by the laws where you live.</p>
+
+  <h2 id="apple">15. App Store Terms</h2>
+  <p>If you downloaded Zenelia from Apple's App Store: these Terms are between you and Avasy Inc., not Apple, and Avasy Inc. is responsible for Zenelia and its content. Apple has no obligation to provide maintenance or support for Zenelia. If Zenelia fails to meet an applicable warranty, you may notify Apple, and Apple may refund the purchase price; Apple has no other warranty obligation. Apple is not responsible for any product claims relating to Zenelia, or for investigating or defending any claim that Zenelia infringes someone else's intellectual property. You confirm that you are not located in a country subject to a Canadian or U.S. government embargo and are not on any government list of restricted parties. Apple and its subsidiaries are third-party beneficiaries of these Terms and may enforce them against you.</p>
+
+  <h2 id="updates">16. Changes to These Terms</h2>
+  <p>We may update these Terms from time to time. When we make material changes, we will update the date above and let you know in the app or by email. If you keep using Zenelia after changes take effect, you accept the updated Terms.</p>
+
+  <h2 id="contact">17. Contact Us</h2>
+  <p>Questions about these Terms? Contact us:</p>
   <ul>
-    <li><strong>Monthly:</strong> $8.99 CAD per month, auto-renewing. Includes a 7-day free trial.</li>
-    <li><strong>Yearly:</strong> $59.99 CAD per year, auto-renewing. Includes a 7-day free trial.</li>
-    <li><strong>Lifetime:</strong> $169.99 CAD one-time purchase. No recurring charges.</li>
+    <li><strong>Email:</strong> <a href="mailto:hello@zenelia.ai">hello@zenelia.ai</a></li>
+    <li><strong>Company:</strong> Avasy Inc.</li>
+    <li><strong>Address:</strong> Ontario, Canada</li>
   </ul>
-  <p>All payments are processed by Apple through In-App Purchase. Subscriptions auto-renew unless cancelled at least 24 hours before the end of the current billing period. You can manage or cancel your subscription at any time through your iPhone Settings → your name → Subscriptions. Free trial eligibility is determined by Apple and limited to one trial per Apple ID.</p>
-
-  <h2>4. User Content</h2>
-  <p>You retain ownership of any content you create within the App, including your profile information, session data, and any exported reports. We do not claim ownership of your content.</p>
-
-  <h2>5. Acceptable Use</h2>
-  <p>You agree not to misuse the App, including but not limited to: attempting to reverse-engineer, decompile, or disassemble the App; using the App for any unlawful purpose; attempting to gain unauthorized access to our systems or other users' data; or interfering with the proper functioning of the App.</p>
-
-  <h2>6. AI-Generated Content</h2>
-  <p>Zenelia uses artificial intelligence to generate personalized coaching messages and health reports. AI-generated content is for informational and motivational purposes only. It does not constitute medical advice, diagnosis, or treatment. Always consult a qualified healthcare professional for medical decisions.</p>
-
-  <h2>7. Medical Disclaimer</h2>
-  <p>Zenelia is not a medical device and is not intended to diagnose, treat, cure, or prevent any disease or medical condition. The cognitive training exercises in Zenelia are informed by published research but are not a substitute for professional medical care. If you have concerns about your cognitive health, please consult your physician.</p>
-
-  <h2>8. Privacy</h2>
-  <p>Your use of Zenelia is also governed by our <a href="/privacy.html">Privacy Policy</a>, which describes how we collect, use, and protect your information.</p>
-
-  <h2>9. Intellectual Property</h2>
-  <p>Zenelia, including its design, code, content, and branding, is the intellectual property of Avasy Inc. and is protected by applicable copyright, trademark, and other intellectual property laws. You may not copy, modify, distribute, or create derivative works based on the App without our express written permission.</p>
-
-  <h2>10. Termination</h2>
-  <p>We reserve the right to suspend or terminate your access to the App at any time for violation of these Terms. You may delete your account at any time through the App (Profile → Privacy & Data → Delete My Account). Upon termination, your license to use the App ends immediately.</p>
-
-  <h2>11. Limitation of Liability</h2>
-  <p>To the maximum extent permitted by law, Avasy Inc. shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of the App. Our total liability for any claim related to the App shall not exceed the amount you paid to us in the 12 months preceding the claim.</p>
-
-  <h2>12. Changes to These Terms</h2>
-  <p>We may update these Terms from time to time. We will notify you of material changes by updating the "Last updated" date at the top of this page. Your continued use of the App after any changes constitutes your acceptance of the updated Terms.</p>
-
-  <h2>13. Governing Law</h2>
-  <p>These Terms are governed by and construed in accordance with the laws of the Province of Ontario and the federal laws of Canada applicable therein, without regard to conflict of law principles.</p>
-
-  <h2>14. Contact Us</h2>
-  <p>If you have questions about these Terms, contact us at <a href="mailto:hello@zenelia.ai">hello@zenelia.ai</a>.</p>
-  <p>Avasy Inc.<br>Ontario, Canada</p>
 </div>
 
 <footer>

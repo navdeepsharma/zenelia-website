@@ -56,7 +56,7 @@ body{font-family:'Jost',sans-serif;background:var(--parchment);color:var(--fores
 <div class="hero">
   <div class="badge">🎁 A Gift That Lasts</div>
   <h1>Give the gift of a <em>sharper mind.</em></h1>
-  <p>For parents, grandparents, or anyone who believes their brain is worth protecting. One gift. Lifetime access. No subscriptions.</p>
+  <p>For parents, grandparents, or anyone who'd enjoy a daily brain training habit. One gift. Lifetime access. No subscriptions.</p>
   <div class="price">$129.99 <span style="font-size:16px;font-weight:400;">USD</span></div>
   <div class="price-sub">One-time payment · Lifetime access · All future updates included</div>
 </div>
@@ -72,19 +72,19 @@ body{font-family:'Jost',sans-serif;background:var(--parchment);color:var(--fores
     <div class="field"><label>Recipient's Email (optional)</label><input type="email" id="recipientEmail" placeholder="their@email.com"><div class="hint">Leave blank to receive a gift code you can share yourself</div></div>
   </div>
   <div class="field"><label>Personal Message (optional)</label><textarea id="personalMessage" placeholder="Write a personal note to include in the gift email..."></textarea></div>
-  <button class="btn btn-primary" id="giftBtn" onclick="handleGift()">Send Gift — $129.99 →</button>
+  <button class="btn btn-primary" id="giftBtn" onclick="handleGift()">Send Gift — $129.99 USD →</button>
   <div id="error" class="error"></div>
   <div id="loading" class="loading">Preparing your gift...</div>
-  <p style="font-size:12px;color:var(--inkGhost);text-align:center;margin-top:16px;line-height:1.6;">Secure payment via Stripe. Your recipient will receive a beautiful gift email with download instructions. They sign up with their email and lifetime access activates automatically.</p>
+  <p style="font-size:12px;color:var(--inkGhost);text-align:center;margin-top:16px;line-height:1.6;">Secure payment via Stripe. By purchasing, you agree to our <a href="/terms.html">Terms of Use</a>; lifetime access lasts for as long as Zenelia is offered. Your recipient will receive a beautiful gift email with download instructions. They sign up with their email and lifetime access activates automatically.</p>
 </div>
 <div class="features">
   <div class="feat"><div class="icon">🧠</div><div><h3>15+ Brain Training Games</h3><p>Memory, speed, attention, and language — four domains linked to long-term cognitive health.</p></div></div>
   <div class="feat"><div class="icon">🤖</div><div><h3>Personal AI Coach</h3><p>Adapts to mood, sleep, and performance. A real insight from an AI that knows their cognitive profile.</p></div></div>
-  <div class="feat"><div class="icon">📊</div><div><h3>Monthly Health Reports</h3><p>AI-written cognitive health summaries they can share with their doctor.</p></div></div>
-  <div class="feat"><div class="icon">🔬</div><div><h3>Backed by the ACTIVE Trial</h3><p>Based on the largest study of cognitive training in aging — 2,800 participants, 10+ years of data.</p></div></div>
+  <div class="feat"><div class="icon">📊</div><div><h3>Monthly Training Reports</h3><p>A monthly summary of their sessions, streaks and score trends, easy to save or share.</p></div></div>
+  <div class="feat"><div class="icon">🔬</div><div><h3>Inspired by 20 years of research</h3><p>Zenelia's exercises are inspired by cognitive training research, including the ACTIVE Trial, which followed 2,800+ older adults for up to 20 years.</p></div></div>
   <div class="feat"><div class="icon">♾️</div><div><h3>Lifetime Access</h3><p>No monthly fees, no renewals. One gift that keeps giving for decades.</p></div></div>
 </div>
-<div class="footer"><p>© 2026 Avasy Inc. · <a href="/">Zenelia</a> · <a href="/privacy.html">Privacy</a> · <a href="/support.html">Support</a> · <a href="mailto:hello@zenelia.ai">hello@zenelia.ai</a></p></div>
+<div class="footer"><p>© 2026 Avasy Inc. · <a href="/">Zenelia</a> · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a> · <a href="/support.html">Support</a> · <a href="mailto:hello@zenelia.ai">hello@zenelia.ai</a></p></div>
 <script>
 const CHECKOUT_URL="https://uvespyvcypudqufojmpk.supabase.co/functions/v1/create-checkout";
 async function handleGift(){
